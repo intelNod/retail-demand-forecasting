@@ -1,0 +1,17 @@
+area,check,issue_count,status
+calendar,invalid dates,0,PASS
+calendar,missing required values,0,PASS
+calendar,duplicate date/day keys,0,PASS
+sales evaluation,missing or non-numeric sales,0,PASS
+sales evaluation,negative or fractional sales,0,PASS
+sales evaluation,duplicate series keys,0,PASS
+sales evaluation,hierarchy conflicts,0,PASS
+sales validation,missing or non-numeric sales,0,PASS
+sales validation,negative or fractional sales,0,PASS
+sales validation,duplicate series keys,0,PASS
+sales validation,hierarchy conflicts,0,PASS
+prices,missing/invalid/non-positive prices,0,PASS
+prices,invalid or missing business keys,0,PASS
+prices,duplicate business keys,0,PASS
+submission,invalid IDs or forecast values,0,PASS
+cross-file,key/history mismatches,0,PASS
