@@ -5,8 +5,8 @@ the M5 Forecasting — Accuracy dataset.
 
 ## Current progress
 
-The full read-only data audit is complete. All five source files were checked
-without changing `data/raw`.
+The full read-only data audit and FOODS cleaning/preprocessing stages are
+complete. All five source files were checked without changing `data/raw`.
 
 Main verified findings:
 
@@ -22,6 +22,18 @@ Main verified findings:
 
 Detailed results are stored in `reports/` and in the executed notebook.
 
+The cleaning notebook processed the complete FOODS category:
+
+- 14,370 store-product series and 27,892,170 daily source values;
+- 3,994,860 weekly rows inspected before cleaning;
+- 3,118,862 model-ready weekly rows saved;
+- 1,437 products across all ten stores;
+- zero duplicated output keys and zero missing required output values;
+- zero-sales weeks retained and high-sales weeks retained with a review flag;
+- inactive weeks without prices and incomplete weeks excluded with counts
+  recorded in the cleaning report;
+- chronological train, validation, test, and demonstration periods documented.
+
 ## Project structure
 
 ```text
@@ -31,10 +43,15 @@ data/
   processed/    cleaned modeling data
 notebooks/
   01_data_audit.ipynb
+  02_data_cleaning.ipynb
 reports/
   data_file_inventory.csv
   data_audit_summary.csv
   data_audit_findings.json
+  cleaning_summary.csv
+  cleaning_findings.json
+  split_summary.csv
+  split_plan.csv
 ```
 
 ## Run the audit
@@ -44,8 +61,11 @@ reports/
 3. Install the packages from `requirements.txt`.
 4. Run `notebooks/01_data_audit.ipynb` from the repository root or in Google
    Colab.
+5. Review the audit report, then run `notebooks/02_data_cleaning.ipynb`.
 
 [Open the audit notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/01_data_audit.ipynb)
+
+[Open the cleaning notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/02_data_cleaning.ipynb)
 
 ## Safety and reproducibility
 

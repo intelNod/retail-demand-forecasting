@@ -1,0 +1,33 @@
+{
+  "sales_outlier_threshold_daily_units": 47,
+  "summary": {
+    "source_foods_series": 14370,
+    "source_daily_cells": 27892170,
+    "weekly_rows_before_cleaning": 3994860,
+    "partial_week_rows": 14370,
+    "missing_price_week_rows": 870551,
+    "missing_price_with_positive_sales": 0,
+    "output_rows": 3118862,
+    "weeks_with_sales_outliers": 20907,
+    "zero_demand_weeks": 634398,
+    "duplicate_output_keys": 0,
+    "required_output_nulls": 0,
+    "parquet_parts": 38,
+    "removed_rows": 875998,
+    "zero_demand_week_pct": 20.34068836646187
+  },
+  "split_counts": {
+    "train": 3003902,
+    "validation": 57480,
+    "test": 57480,
+    "outside_split": 0
+  },
+  "rules": {
+    "zero_sales": "kept",
+    "sales_outliers": "kept and flagged",
+    "empty_events": "No event",
+    "partial_weeks": "excluded",
+    "weeks_without_price": "excluded as inactive assortment",
+    "raw_files": "never overwritten"
+  }
+}

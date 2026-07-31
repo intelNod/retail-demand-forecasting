@@ -1,0 +1,5 @@
+split,start,end,purpose
+train,2011-01-31,2016-03-27,fit models
+validation,2016-03-28,2016-04-24,compare models and settings
+test,2016-04-25,2016-05-22,final untouched evaluation
+demonstration,2016-05-23,2016-05-29,future prediction demo; target unavailable

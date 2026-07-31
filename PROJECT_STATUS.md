@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-Full data audit completed
+FOODS cleaning and chronological split completed
 
 ## Completed
 
@@ -33,18 +33,30 @@ Full data audit completed
   for sales and prices.
 - Saved the file inventory, SHA-256 hashes, audit summary, and detailed findings
   in `reports/`.
+- Created and executed the Colab-compatible FOODS cleaning notebook.
+- Processed all 14,370 FOODS store-product series and 27,892,170 daily sales
+  values.
+- Converted daily values into 3,994,860 weekly records before cleaning.
+- Excluded incomplete weeks and 870,551 no-price weeks; none of the no-price
+  weeks contained positive sales.
+- Saved 3,118,862 model-ready weekly rows in 38 Parquet parts.
+- Confirmed zero duplicate weekly keys and zero missing required output values.
+- Kept 634,398 zero-demand weeks as valid observations.
+- Kept and flagged 20,907 weeks containing high daily sales.
+- Added calendar events, SNAP days, and day-weighted weekly prices.
+- Created chronological train, validation, test, and demonstration periods.
+- Saved cleaning and split reports in `reports/`.
 
 ## Current task
 
-Review the real audit findings and agree on the cleaning, transformation, and
-time-based split plan.
+Review the cleaning results and chronological split before feature engineering.
 
 ## Next planned task
 
-Create the cleaning and preprocessing notebook. It will reshape the selected
-modeling scope, merge calendar and price data, handle expected missing
-context fields, review outliers, and create a leakage-safe chronological split.
-No model training will begin until this output has been reviewed.
+Create an EDA and leakage-safe feature-engineering notebook. It will inspect
+weekly demand by time, store, department, events, SNAP, and price; then create
+lag and rolling features using past weeks only. No model training will begin
+until the feature table has been reviewed.
 
 ## Planned course route
 
@@ -64,8 +76,12 @@ No model training will begin until this output has been reviewed.
 - High sales and prices are review candidates, not automatic errors.
 - Optional event fields and zero sales are valid data characteristics and must
   not be filled or removed without a clear rule.
+- Project submission is due on 03.08.2026; the exact LMS time must be confirmed.
+- No commits or pushes are allowed after final LMS submission.
 
 ## Git state
 
 - Dataset folders and the full M5 Project Brief are published on `origin/main`.
-- The completed audit milestone is awaiting review and its own commit.
+- The completed audit milestone is published on `origin/main`.
+- The FOODS cleaning milestone is committed locally and awaiting review before
+  push.

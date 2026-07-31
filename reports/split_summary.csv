@@ -1,0 +1,5 @@
+split,rows
+train,3003902
+validation,57480
+test,57480
+outside_split,0

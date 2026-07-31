@@ -1,0 +1,15 @@
+metric,value
+source_foods_series,14370.0
+source_daily_cells,27892170.0
+weekly_rows_before_cleaning,3994860.0
+partial_week_rows,14370.0
+missing_price_week_rows,870551.0
+missing_price_with_positive_sales,0.0
+output_rows,3118862.0
+weeks_with_sales_outliers,20907.0
+zero_demand_weeks,634398.0
+duplicate_output_keys,0.0
+required_output_nulls,0.0
+parquet_parts,38.0
+removed_rows,875998.0
+zero_demand_week_pct,20.34068836646187
