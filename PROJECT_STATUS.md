@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-EDA-1 dataset overview completed
+EDA-2 train-only demand-over-time analysis completed
 
 ## Completed
 
@@ -54,15 +54,24 @@ EDA-1 dataset overview completed
   across train, validation, and test.
 - Visualized total weekly FOODS demand and the validation/test boundaries.
 - Saved the EDA overview, split statistics, and weekly time-series reports.
+- Created and executed the train-only demand-over-time notebook.
+- Analyzed 269 training weeks without loading validation or test targets.
+- Compared raw weekly demand with a four-week moving average.
+- Summarized demand per active series by calendar month and year.
+- Found the highest training-period monthly average in July and the lowest in
+  November.
+- Documented that the changing number of active series makes total-demand and
+  per-series trends different.
+- Saved weekly, monthly, yearly, and reproducible finding reports for EDA-2.
 
 ## Current task
 
-Review the short EDA-1 results before deeper demand analysis.
+Review the train-only EDA-2 results before comparing stores and departments.
 
 ## Next planned task
 
-Create EDA-2 for demand over time. It will examine trend and seasonality more
-closely without creating features or training a model.
+Create EDA-3 for stores and FOODS departments. It will compare demand levels
+using training data only, without creating features or training a model.
 
 ## Planned course route
 
@@ -75,7 +84,8 @@ closely without creating features or training a model.
 ## Known risks and blockers
 
 - Mentor approval is still pending.
-- Exact train, validation, test, and demonstration dates still need approval.
+- The chronological split dates are fixed and must not be changed after model
+  comparison begins.
 - The complete transformed dataset may exceed free Colab memory, so modeling
   scope must be justified with real memory and runtime measurements.
 - The current M5 data represents US Walmart stores, not Uzbekistan.
@@ -90,4 +100,5 @@ closely without creating features or training a model.
 - Dataset folders and the full M5 Project Brief are published on `origin/main`.
 - The completed audit milestone is published on `origin/main`.
 - The FOODS cleaning milestone is published on `origin/main`.
-- EDA-1 is completed locally and awaiting review before push.
+- EDA-1 is published on `origin/main`.
+- EDA-2 is completed locally and awaiting review before push.

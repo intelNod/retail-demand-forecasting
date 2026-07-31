@@ -5,9 +5,9 @@ the M5 Forecasting — Accuracy dataset.
 
 ## Current progress
 
-The full read-only data audit, FOODS cleaning/preprocessing, and first EDA
-overview are complete. All five source files were checked without changing
-`data/raw`.
+The full read-only data audit, FOODS cleaning/preprocessing, EDA overview, and
+train-only time analysis are complete. All five source files were checked
+without changing `data/raw`.
 
 Main verified findings:
 
@@ -40,6 +40,12 @@ three departments, ten stores, three states, and 277 weeks from 31.01.2011 to
 22.05.2016. It also records demand statistics for each chronological split and
 visualizes total weekly FOODS demand.
 
+The time-based EDA uses training targets only. It compares weekly demand with a
+four-week moving average and summarizes monthly and yearly patterns. July has
+the highest mean weekly demand per active series in the training history, while
+November has the lowest. The number of active series changes considerably over
+time, so total demand and per-series demand must be interpreted together.
+
 ## Project structure
 
 ```text
@@ -51,6 +57,7 @@ notebooks/
   01_data_audit.ipynb
   02_data_cleaning.ipynb
   03_eda_overview.ipynb
+  04_eda_demand_time.ipynb
 reports/
   data_file_inventory.csv
   data_audit_summary.csv
@@ -62,6 +69,10 @@ reports/
   eda_overview_summary.csv
   eda_split_statistics.csv
   eda_weekly_overview.csv
+  eda_time_weekly_train.csv
+  eda_time_monthly_train.csv
+  eda_time_yearly_train.csv
+  eda_time_findings.csv
 ```
 
 ## Run the audit
@@ -73,12 +84,15 @@ reports/
    Colab.
 5. Review the audit report, then run `notebooks/02_data_cleaning.ipynb`.
 6. Run `notebooks/03_eda_overview.ipynb` for the first exploratory overview.
+7. Run `notebooks/04_eda_demand_time.ipynb` for train-only time analysis.
 
 [Open the audit notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/01_data_audit.ipynb)
 
 [Open the cleaning notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/02_data_cleaning.ipynb)
 
 [Open the EDA overview in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/03_eda_overview.ipynb)
+
+[Open the time EDA in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/04_eda_demand_time.ipynb)
 
 ## Safety and reproducibility
 
