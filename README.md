@@ -5,8 +5,9 @@ the M5 Forecasting — Accuracy dataset.
 
 ## Current progress
 
-The full read-only data audit and FOODS cleaning/preprocessing stages are
-complete. All five source files were checked without changing `data/raw`.
+The full read-only data audit, FOODS cleaning/preprocessing, and first EDA
+overview are complete. All five source files were checked without changing
+`data/raw`.
 
 Main verified findings:
 
@@ -34,6 +35,11 @@ The cleaning notebook processed the complete FOODS category:
   recorded in the cleaning report;
 - chronological train, validation, test, and demonstration periods documented.
 
+The first EDA overview confirmed 3,118,862 model-ready rows, 1,437 products,
+three departments, ten stores, three states, and 277 weeks from 31.01.2011 to
+22.05.2016. It also records demand statistics for each chronological split and
+visualizes total weekly FOODS demand.
+
 ## Project structure
 
 ```text
@@ -44,6 +50,7 @@ data/
 notebooks/
   01_data_audit.ipynb
   02_data_cleaning.ipynb
+  03_eda_overview.ipynb
 reports/
   data_file_inventory.csv
   data_audit_summary.csv
@@ -52,6 +59,9 @@ reports/
   cleaning_findings.json
   split_summary.csv
   split_plan.csv
+  eda_overview_summary.csv
+  eda_split_statistics.csv
+  eda_weekly_overview.csv
 ```
 
 ## Run the audit
@@ -62,10 +72,13 @@ reports/
 4. Run `notebooks/01_data_audit.ipynb` from the repository root or in Google
    Colab.
 5. Review the audit report, then run `notebooks/02_data_cleaning.ipynb`.
+6. Run `notebooks/03_eda_overview.ipynb` for the first exploratory overview.
 
 [Open the audit notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/01_data_audit.ipynb)
 
 [Open the cleaning notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/02_data_cleaning.ipynb)
+
+[Open the EDA overview in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/03_eda_overview.ipynb)
 
 ## Safety and reproducibility
 

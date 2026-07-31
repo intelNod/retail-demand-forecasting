@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-FOODS cleaning and chronological split completed
+EDA-1 dataset overview completed
 
 ## Completed
 
@@ -46,17 +46,23 @@ FOODS cleaning and chronological split completed
 - Added calendar events, SNAP days, and day-weighted weekly prices.
 - Created chronological train, validation, test, and demonstration periods.
 - Saved cleaning and split reports in `reports/`.
+- Created and executed the short EDA overview notebook.
+- Confirmed 3,118,862 model-ready rows across 1,437 products, three
+  departments, ten stores, three states, and 277 weeks.
+- Verified the processed date range from 31.01.2011 to 22.05.2016.
+- Compared row counts, average demand, maximum demand, and zero-demand share
+  across train, validation, and test.
+- Visualized total weekly FOODS demand and the validation/test boundaries.
+- Saved the EDA overview, split statistics, and weekly time-series reports.
 
 ## Current task
 
-Review the cleaning results and chronological split before feature engineering.
+Review the short EDA-1 results before deeper demand analysis.
 
 ## Next planned task
 
-Create an EDA and leakage-safe feature-engineering notebook. It will inspect
-weekly demand by time, store, department, events, SNAP, and price; then create
-lag and rolling features using past weeks only. No model training will begin
-until the feature table has been reviewed.
+Create EDA-2 for demand over time. It will examine trend and seasonality more
+closely without creating features or training a model.
 
 ## Planned course route
 
@@ -83,5 +89,5 @@ until the feature table has been reviewed.
 
 - Dataset folders and the full M5 Project Brief are published on `origin/main`.
 - The completed audit milestone is published on `origin/main`.
-- The FOODS cleaning milestone is committed locally and awaiting review before
-  push.
+- The FOODS cleaning milestone is published on `origin/main`.
+- EDA-1 is completed locally and awaiting review before push.
