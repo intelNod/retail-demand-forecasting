@@ -46,6 +46,12 @@ the highest mean weekly demand per active series in the training history, while
 November has the lowest. The number of active series changes considerably over
 time, so total demand and per-series demand must be interpreted together.
 
+The store and department EDA also uses training targets only. `CA_3` has the
+highest mean weekly demand per active product and `CA_4` the lowest. `FOODS_3`
+has the highest mean and total demand, while `FOODS_2` has the highest
+zero-demand share. These are descriptive differences and do not prove their
+causes.
+
 ## Project structure
 
 ```text
@@ -58,6 +64,7 @@ notebooks/
   02_data_cleaning.ipynb
   03_eda_overview.ipynb
   04_eda_demand_time.ipynb
+  05_eda_stores_departments.ipynb
 reports/
   data_file_inventory.csv
   data_audit_summary.csv
@@ -73,6 +80,9 @@ reports/
   eda_time_monthly_train.csv
   eda_time_yearly_train.csv
   eda_time_findings.csv
+  eda_store_statistics_train.csv
+  eda_department_statistics_train.csv
+  eda_store_department_findings.csv
 ```
 
 ## Run the audit
@@ -85,6 +95,8 @@ reports/
 5. Review the audit report, then run `notebooks/02_data_cleaning.ipynb`.
 6. Run `notebooks/03_eda_overview.ipynb` for the first exploratory overview.
 7. Run `notebooks/04_eda_demand_time.ipynb` for train-only time analysis.
+8. Run `notebooks/05_eda_stores_departments.ipynb` for train-only store and
+   department comparisons.
 
 [Open the audit notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/01_data_audit.ipynb)
 
@@ -93,6 +105,8 @@ reports/
 [Open the EDA overview in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/03_eda_overview.ipynb)
 
 [Open the time EDA in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/04_eda_demand_time.ipynb)
+
+[Open the store and department EDA in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/05_eda_stores_departments.ipynb)
 
 ## Safety and reproducibility
 

@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-EDA-2 train-only demand-over-time analysis completed
+EDA-3 train-only store and department analysis completed
 
 ## Completed
 
@@ -63,15 +63,26 @@ EDA-2 train-only demand-over-time analysis completed
 - Documented that the changing number of active series makes total-demand and
   per-series trends different.
 - Saved weekly, monthly, yearly, and reproducible finding reports for EDA-2.
+- Created and executed the train-only store and department EDA notebook.
+- Compared all ten stores using mean demand, total demand, zero-demand share,
+  and outlier-week share.
+- Compared `FOODS_1`, `FOODS_2`, and `FOODS_3` using the same metrics.
+- Found the highest mean store demand in `CA_3` and the lowest in `CA_4`.
+- Found that `FOODS_3` has the highest mean and total demand, while `FOODS_2`
+  has the highest zero-demand share.
+- Confirmed that all 3,003,902 training rows are represented once in both the
+  store and department summaries.
+- Saved store, department, and reproducible finding reports for EDA-3.
 
 ## Current task
 
-Review the train-only EDA-2 results before comparing stores and departments.
+Review the train-only EDA-3 results before analyzing zeros, prices, events, and
+outliers.
 
 ## Next planned task
 
-Create EDA-3 for stores and FOODS departments. It will compare demand levels
-using training data only, without creating features or training a model.
+Create EDA-4 for zero demand, prices, events, SNAP, and outliers. It will use
+training data only, without creating features or training a model.
 
 ## Planned course route
 
@@ -101,4 +112,5 @@ using training data only, without creating features or training a model.
 - The completed audit milestone is published on `origin/main`.
 - The FOODS cleaning milestone is published on `origin/main`.
 - EDA-1 is published on `origin/main`.
-- EDA-2 is completed locally and awaiting review before push.
+- EDA-2 is published on `origin/main`.
+- EDA-3 is completed locally and awaiting review before push.
