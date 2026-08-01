@@ -66,6 +66,13 @@ After the required eight-week warm-up, 3,003,902 model-ready rows remain:
 validation rows belong to a late-starting product series that did not yet have
 eight past weeks. All leakage, null, duplicate-key, and split-order checks pass.
 
+The validation baseline compares the previous four-week mean with the previous
+week for every model-ready store-product row. The four-week mean is the stronger
+reference: MAE is 4.517 units and RMSE is 10.130 units, compared with MAE 5.031
+and RMSE 10.580 for the previous-week forecast. Store and department reports
+show where this simple reference performs better or worse. Test targets remain
+unused.
+
 ## Project structure
 
 ```text
@@ -81,6 +88,7 @@ notebooks/
   05_eda_stores_departments.ipynb
   06_eda_quality_factors.ipynb
   07_feature_engineering.ipynb
+  08_baseline.ipynb
 reports/
   data_file_inventory.csv
   data_audit_summary.csv
@@ -111,6 +119,10 @@ reports/
   feature_split_summary.csv
   leakage_checks.csv
   feature_summary.csv
+  baseline_metrics_validation.csv
+  baseline_store_metrics_validation.csv
+  baseline_department_metrics_validation.csv
+  baseline_checks.csv
 ```
 
 ## Run the audit
@@ -129,6 +141,8 @@ reports/
    analysis.
 10. Run `notebooks/07_feature_engineering.ipynb` to create and verify the local
     leakage-safe train, validation, and test feature files.
+11. Run `notebooks/08_baseline.ipynb` to evaluate the two simple validation
+    baselines without using test targets.
 
 [Open the audit notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/01_data_audit.ipynb)
 
@@ -143,6 +157,8 @@ reports/
 [Open the quality-factor EDA in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/06_eda_quality_factors.ipynb)
 
 [Open the feature-engineering notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/07_feature_engineering.ipynb)
+
+[Open the baseline notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/08_baseline.ipynb)
 
 ## Safety and reproducibility
 

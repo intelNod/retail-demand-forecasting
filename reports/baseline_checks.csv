@@ -1,0 +1,8 @@
+check,status,details
+validation split only,PASS,['validation']
+four chronological validation weeks,PASS,4
+prediction values present,PASS,0
+prediction values non-negative,PASS,sales cannot be negative
+store row accounting,PASS,57478
+department row accounting,PASS,57478
+test file not loaded,PASS,validation.parquet

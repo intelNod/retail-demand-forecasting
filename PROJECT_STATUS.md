@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C3 data preparation completed: leakage-safe feature table verified
+C4 started: simple validation baseline verified
 
 ## Completed
 
@@ -102,15 +102,26 @@ C3 data preparation completed: leakage-safe feature table verified
   original file remains unchanged.
 - Saved feature definitions, split counts, missing-value counts, leakage
   checks, and a feature summary in `reports/`.
+- Created and executed the simple baseline notebook without training a model.
+- Evaluated 57,478 chronological validation rows without loading test targets.
+- Measured the main previous-four-week-mean baseline at MAE 4.517 and RMSE
+  10.130 units.
+- Measured the previous-week reference at MAE 5.031 and RMSE 10.580 units.
+- Confirmed that the previous-four-week mean is the stronger baseline on both
+  validation metrics.
+- Reviewed both baselines across all ten stores and three FOODS departments.
+- Passed validation-scope, prediction-value, and group-accounting checks.
+- Saved overall, store, department, and verification reports for the baseline.
 
 ## Current task
 
-Review the completed C3 outputs before starting model training.
+Review the completed baseline results before recording the first MLflow model
+experiment.
 
 ## Next planned task
 
-Create a simple baseline and record the first reproducible experiment with
-MLflow. This task has not started.
+Add the minimal MLflow and modeling dependencies, then design the first simple
+regression experiment. This task has not started.
 
 ## Planned course route
 
@@ -145,3 +156,4 @@ MLflow. This task has not started.
 - EDA-4 is published as the first verified milestone in the current C3 batch.
 - The leakage-safe feature table is published as the second verified milestone
   in the current C3 batch.
+- The verified validation baseline is published on `origin/main`.
