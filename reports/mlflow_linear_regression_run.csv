@@ -1,0 +1,2 @@
+experiment_name,run_name,run_id,tracking_uri,sklearn_version,mlflow_version,train_rows,validation_rows,feature_count,fit_seconds,predict_seconds,run_status,model_reload_check,reloaded_model_mae,validation_mae,validation_rmse,baseline_mae,mae_improvement_pct
+retail-demand-forecasting,linear-regression-numeric-v1,ac40a854fb9f48818d5e1019f11cafb1,sqlite:///mlflow.db,1.7.2,3.15.0,2888944,57478,20,2.34904860000006,0.013349199999993289,FINISHED,PASS,4.766150951385498,4.766150951385498,10.569282531738281,4.517176136956748,-5.511735803078199

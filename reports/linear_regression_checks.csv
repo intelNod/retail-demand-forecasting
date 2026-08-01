@@ -1,0 +1,15 @@
+check,status,details
+expected train rows,PASS,2888944
+expected validation rows,PASS,57478
+train split only,PASS,['train']
+validation split only,PASS,['validation']
+chronological split order,PASS,train max < validation min
+target excluded from model features,PASS,weekly_units_sold
+model inputs contain no nulls,PASS,train and validation
+finite raw predictions,PASS,57478
+non-negative final predictions,PASS,clip at zero
+store row accounting,PASS,57478
+department row accounting,PASS,57478
+test file not loaded,PASS,train.parquet + validation.parquet
+MLflow run finished,PASS,FINISHED
+MLflow model reload reproduces MAE,PASS,4.766151

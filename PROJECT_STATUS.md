@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C4 started: simple validation baseline verified
+C4 in progress: baseline and first MLflow model verified
 
 ## Completed
 
@@ -112,16 +112,33 @@ C4 started: simple validation baseline verified
 - Reviewed both baselines across all ten stores and three FOODS departments.
 - Passed validation-scope, prediction-value, and group-accounting checks.
 - Saved overall, store, department, and verification reports for the baseline.
+- Added reproducible scikit-learn and MLflow dependencies.
+- Created and executed the Linear Regression + MLflow notebook.
+- Trained StandardScaler + Linear Regression on all 2,888,944 model-ready
+  training rows and 20 numeric leakage-safe features.
+- Evaluated the model on 57,478 later validation rows without loading test.
+- Measured validation MAE 4.766 and RMSE 10.569 after clipping negative demand
+  predictions to zero.
+- Confirmed the model is 5.51% worse by MAE than the 4.517 baseline and must
+  not be selected as final.
+- Recorded one finished MLflow run with parameters, metrics, reports, feature
+  list, and the fitted sklearn pipeline.
+- Reloaded the saved MLflow model and reproduced validation MAE 4.766.
+- Passed all 14 split, leakage, prediction, row-accounting, MLflow-status, and
+  model-reload checks.
+- Saved model metrics, grouped results, standardized coefficients, checks, and
+  the MLflow run summary in `reports/`.
 
 ## Current task
 
-Review the completed baseline results before recording the first MLflow model
-experiment.
+Review the completed Linear Regression experiment and retain the four-week mean
+as the current best validation method.
 
 ## Next planned task
 
-Add the minimal MLflow and modeling dependencies, then design the first simple
-regression experiment. This task has not started.
+Design one course-appropriate tree-model experiment on the same chronological
+split, with runtime and memory kept suitable for Colab. This task has not
+started.
 
 ## Planned course route
 
@@ -157,3 +174,5 @@ regression experiment. This task has not started.
 - The leakage-safe feature table is published as the second verified milestone
   in the current C3 batch.
 - The verified validation baseline is published on `origin/main`.
+- The verified Linear Regression + MLflow experiment is published on
+  `origin/main`.

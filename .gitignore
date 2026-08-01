@@ -193,3 +193,7 @@ data/processed/*
 !data/processed/.gitkeep
 data/synthetic/*.csv
 data/synthetic/*.json
+
+# Local MLflow experiment database and artifacts.
+mlruns/
+mlflow.db

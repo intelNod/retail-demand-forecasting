@@ -73,6 +73,13 @@ and RMSE 10.580 for the previous-week forecast. Store and department reports
 show where this simple reference performs better or worse. Test targets remain
 unused.
 
+The first trained model is a standardized Linear Regression using all 20
+numeric leakage-safe features and all 2,888,944 training rows. Its validation
+MAE is 4.766 and RMSE is 10.569, so it is 5.51% worse than the four-week-mean
+baseline by MAE and is not selected as the final model. The experiment is still
+valuable evidence: MLflow recorded a finished run, and the saved model was
+reloaded to reproduce the same MAE. The test period remains unused.
+
 ## Project structure
 
 ```text
@@ -89,6 +96,7 @@ notebooks/
   06_eda_quality_factors.ipynb
   07_feature_engineering.ipynb
   08_baseline.ipynb
+  09_linear_regression_mlflow.ipynb
 reports/
   data_file_inventory.csv
   data_audit_summary.csv
@@ -123,6 +131,12 @@ reports/
   baseline_store_metrics_validation.csv
   baseline_department_metrics_validation.csv
   baseline_checks.csv
+  linear_regression_metrics_validation.csv
+  linear_regression_store_metrics_validation.csv
+  linear_regression_department_metrics_validation.csv
+  linear_regression_coefficients.csv
+  linear_regression_checks.csv
+  mlflow_linear_regression_run.csv
 ```
 
 ## Run the audit
@@ -143,6 +157,8 @@ reports/
     leakage-safe train, validation, and test feature files.
 11. Run `notebooks/08_baseline.ipynb` to evaluate the two simple validation
     baselines without using test targets.
+12. Run `notebooks/09_linear_regression_mlflow.ipynb` to train the first model,
+    compare it with the baseline, and record the local MLflow experiment.
 
 [Open the audit notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/01_data_audit.ipynb)
 
@@ -160,9 +176,15 @@ reports/
 
 [Open the baseline notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/08_baseline.ipynb)
 
+[Open the Linear Regression experiment in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/09_linear_regression_mlflow.ipynb)
+
 ## Safety and reproducibility
 
 Raw CSV files are excluded from GitHub because several exceed GitHub's regular
 file-size limit. Their SHA-256 hashes are recorded in
 `reports/data_file_inventory.csv`. Cleaning and feature engineering write new
 local files instead of overwriting the originals.
+
+MLflow metadata (`mlflow.db`) and model artifacts (`mlruns/`) are generated
+locally and excluded from Git. The committed run summary and verification
+reports preserve the experiment ID, versions, parameters, and metrics.
