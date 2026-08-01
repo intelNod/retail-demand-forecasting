@@ -6,7 +6,8 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C6 final review: submission and defense materials prepared
+C6 defense preparation: comprehensive guide complete; presentation revision
+still required
 
 ## Completed
 
@@ -218,20 +219,24 @@ C6 final review: submission and defense materials prepared
   limitations, risks, and human-review safeguards.
 - Created a one-page LMS submission-details document with repository and Colab
   links, project summary, and verified metrics.
-- Created and visually reviewed a 10-slide defense presentation with real
-  charts, speaker notes, and source blocks.
-- Passed the presentation overflow test and inspected all ten rendered slides.
-- Added a timed 10-minute defense guide, likely-question answers, final manual
-  submission checklist, rubric evidence map, and assistance acknowledgement.
+- Created an initial 10-slide defense presentation, then marked it as a
+  superseded draft after student review; it is not the final defense deck.
+- Added a comprehensive Russian guide covering every notebook, exact
+  preprocessing logic, all 20 features, model selection, final test, error
+  analysis, inference/API/UI, reproducibility, responsible use, the full
+  10-minute talk, 55 likely questions, unsafe claims, and final checks.
+- Extracted all twelve verified notebook charts directly from executed outputs
+  and embedded the ten most useful figures in the guide.
+- Added the reviewed Markdown source and a styled standalone Word document.
 
 ## Current task
 
-Run the final repository audit and prepare the handoff for manual LMS upload.
+Review and rebuild the defense presentation from the comprehensive guide.
 
 ## Next planned task
 
-Student reviews the presentation and speaking guide, confirms mentor/deadline
-details, submits through LMS, and makes no commits afterward.
+Student studies the guide, reviews the revised presentation, confirms
+mentor/deadline details, submits through LMS, and makes no commits afterward.
 
 ## Planned course route
 
@@ -252,7 +257,8 @@ details, submits through LMS, and makes no commits afterward.
 - High sales and prices are review candidates, not automatic errors.
 - Optional event fields and zero sales are valid data characteristics and must
   not be filled or removed without a clear rule.
-- Project submission is due on 03.08.2026; the exact LMS time must be confirmed.
+- The instructor message says 04.08.2026 at 23:59, while the student's safer
+  personal deadline is 03.08.2026; the exact LMS deadline must be confirmed.
 - No commits or pushes are allowed after final LMS submission.
 
 ## Git state

@@ -1,11 +1,15 @@
 # Submission and defense files
 
+- `FULL_PROJECT_GUIDE_RU.docx` — comprehensive step-by-step Russian guide to
+  the data, notebooks, models, verified results, demo, limitations, 10-minute
+  defense flow, and examiner questions. This is the authoritative explanation
+  source for preparing the revised presentation.
 - `submission_details.docx` — repository link, Colab demo link, project summary,
   and verified final result for LMS submission.
-- `defense_presentation.pptx` — 10-slide presentation for the 10-minute defense;
-  speaker notes include the talk track and sources.
-- `DEFENSE_SCRIPT.md` — fuller speaking guide and short answers to likely
-  questions.
+- `defense_presentation.pptx` — superseded first draft; do not use it as the
+  final defense deck until it is rebuilt from the full guide.
+- `DEFENSE_SCRIPT.md` — earlier compact speaking notes; the full guide now
+  supersedes them for preparation.
 - `SUBMISSION_CHECKLIST.md` — final manual checks and the no-commit rule.
 
 If LMS provides a mandatory template, copy the links and summary from

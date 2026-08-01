@@ -18,7 +18,9 @@ This map helps the reviewer find the project evidence quickly.
 | Clean-runtime demo | `demo.ipynb`, committed model, `REPRODUCIBILITY.md` | Complete |
 | Responsible AI and limitations | `RESPONSIBLE_AI.md` | Complete |
 | Assistance acknowledgement | `ASSISTANCE.md` | Complete |
-| LMS and defense materials | `submission/` | Complete; use official LMS template if mandatory |
+| Full project/defense explanation | `submission/FULL_PROJECT_GUIDE_RU.docx` | Complete |
+| LMS details | `submission/submission_details.docx` | Complete; use official LMS template if mandatory |
+| Final defense presentation | `submission/defense_presentation.pptx` | Revision required; current file is a superseded draft |
 | Mentor approval | `PROJECT_BRIEF.md` | Pending actual mentor confirmation |
 
 Administrative items still require the student: confirm the exact LMS deadline,

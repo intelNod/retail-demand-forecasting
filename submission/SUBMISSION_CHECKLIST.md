@@ -10,11 +10,13 @@ Complete this checklist before uploading to LMS.
 - [ ] Open `demo.ipynb` in Colab and run all cells.
 - [ ] Confirm the final model prediction is 10.4885 for the example input.
 - [ ] Confirm `python -m unittest discover -s tests -v` reports 18 passing tests.
-- [ ] Review `README.md`, `PROJECT_STATUS.md`, and the presentation.
-- [ ] Practice the defense with `DEFENSE_SCRIPT.md` and keep it near 10 minutes.
+- [ ] Study `FULL_PROJECT_GUIDE_RU.docx` and practice its 10-minute flow.
+- [ ] Rebuild and review the defense presentation from the full guide; the
+  existing PPTX is only a superseded first draft.
 - [ ] Upload the required LMS file and verify the repository link after upload.
 - [ ] Save a screenshot or LMS confirmation of successful submission.
 - [ ] Do not commit or push anything after final LMS submission.
 
-The only unresolved administrative item in the repository is mentor approval
-status. Do not mark it approved unless the mentor actually confirms it.
+The unresolved administrative items are mentor-approval expectations for the
+field scenario and the exact LMS deadline. Do not mark approval complete or
+guess the submission time; verify both with the mentor/LMS.

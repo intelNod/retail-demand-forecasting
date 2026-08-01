@@ -50,13 +50,13 @@ Example response:
 ```json
 {
   "model": "random_forest_final",
-  "predicted_weekly_units": 10.8432,
+  "predicted_weekly_units": 10.4885,
   "unit": "units_per_week"
 }
 ```
 
-The displayed number above only illustrates the response format. The real
-value is calculated by the locally restored final model.
+The displayed value is the verified output of the committed example request
+and standalone final model. Small display rounding may be applied by clients.
 
 ## Error behavior
 
