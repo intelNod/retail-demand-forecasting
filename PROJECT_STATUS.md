@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C5 completed: reusable inference and Flask API verified
+C5 completed: reusable inference, Flask API, and UI verified
 
 ## Completed
 
@@ -176,6 +176,16 @@ C5 completed: reusable inference and Flask API verified
   final model loaded, and verified `/predict` returned 10.4885 units for the
   committed example request.
 - Stopped the temporary verification server after the successful HTTP test.
+- Added a responsive browser UI with project-specific model metrics and a
+  three-part input form for past demand, price, and calendar/program features.
+- Connected the UI to the existing `/health` and `/predict` endpoints without
+  duplicating validation or inference logic.
+- Added clear ready, loading, prediction, reset, and validation-error states.
+- Confirmed that the rendered page contains all 20 required feature inputs.
+- Verified the real local UI page, CSS, JavaScript, and prediction endpoint all
+  returned HTTP 200; the committed example produced 10.4885 units.
+- Expanded the automated suite to 18 passing validation, inference, API, and UI
+  integration tests.
 
 ## Current task
 
@@ -231,3 +241,4 @@ and defense preparation. This task has not started.
   `origin/main`.
 - The verified Flask API, endpoint tests, and example request are published on
   `origin/main`.
+- The verified local prediction UI is published on `origin/main`.

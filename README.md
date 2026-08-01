@@ -175,6 +175,9 @@ src/
   validation.py
   inference.py
   app.py
+  templates/index.html
+  static/styles.css
+  static/app.js
 tests/
   test_validation.py
   test_inference.py
@@ -270,6 +273,11 @@ The service provides `GET /health` and `POST /predict` at
 `examples/predict_request.json`; endpoint details and PowerShell commands are
 in [API.md](API.md). The API is a local course demonstration, not a public
 production deployment.
+
+Opening `http://127.0.0.1:5000` in a browser shows the demonstration UI. It
+contains all 20 model inputs, final test metrics, live model status, validation
+messages, and the calculated weekly forecast. The layout also adapts to tablet
+and mobile widths.
 
 Run all validation, inference, and API tests with:
 

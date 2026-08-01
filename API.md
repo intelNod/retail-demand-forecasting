@@ -1,7 +1,7 @@
 # Prediction API
 
-The Flask service exposes the final Random Forest through two small REST
-endpoints. Run commands from the repository root.
+The Flask service exposes the final Random Forest through a local browser UI
+and two small REST endpoints. Run commands from the repository root.
 
 ## Prerequisites
 
@@ -16,6 +16,9 @@ endpoints. Run commands from the repository root.
 ```
 
 The development server listens on `http://127.0.0.1:5000`.
+
+Open that address in a browser to use the prediction form. A machine-readable
+service description is available at `GET /api`.
 
 ## Health check
 

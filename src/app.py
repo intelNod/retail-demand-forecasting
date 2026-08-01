@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, render_template, request
 
 from src.inference import load_final_model, predict_weekly_demand
 from src.validation import InputValidationError
@@ -23,6 +23,10 @@ def create_app(model: Any | None = None) -> Flask:
 
     @app.get("/")
     def index():
+        return render_template("index.html")
+
+    @app.get("/api")
+    def api_index():
         return jsonify(
             {
                 "service": "retail-demand-forecasting",

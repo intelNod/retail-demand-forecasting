@@ -5,6 +5,7 @@ import unittest
 import numpy as np
 
 from src.app import create_app
+from src.validation import FEATURE_NAMES
 from tests.sample_input import VALID_INPUT
 
 
@@ -19,8 +20,26 @@ class ApiTests(unittest.TestCase):
         app.config.update(TESTING=True)
         self.client = app.test_client()
 
-    def test_index_documents_endpoints(self) -> None:
+    def test_index_renders_prediction_form(self) -> None:
         response = self.client.get("/")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"Weekly demand forecast", response.data)
+        self.assertIn(b'id="prediction-form"', response.data)
+        for feature in FEATURE_NAMES:
+            self.assertIn(f'name="{feature}"'.encode(), response.data)
+
+    def test_ui_assets_are_available(self) -> None:
+        styles = self.client.get("/static/styles.css")
+        script = self.client.get("/static/app.js")
+        try:
+            self.assertEqual(styles.status_code, 200)
+            self.assertEqual(script.status_code, 200)
+        finally:
+            styles.close()
+            script.close()
+
+    def test_api_index_documents_endpoints(self) -> None:
+        response = self.client.get("/api")
         self.assertEqual(response.status_code, 200)
         self.assertIn("POST /predict", response.get_json()["endpoints"])
 
