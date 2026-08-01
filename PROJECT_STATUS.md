@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-EDA-4 train-only quality-factor analysis completed
+C3 data preparation completed: leakage-safe feature table verified
 
 ## Completed
 
@@ -84,15 +84,33 @@ EDA-4 train-only quality-factor analysis completed
 - Verified full row accounting for zero, event, SNAP, price, and outlier
   summaries.
 - Saved seven small train-only EDA-4 reports.
+- Created and executed the leakage-safe feature-engineering notebook.
+- Confirmed 3,104,492 consecutive seven-day gaps across all store-product
+  series before using row-based weekly lags.
+- Created four categorical and 20 numeric features using past sales, known
+  prices, and known calendar information.
+- Applied `shift(1)` before all sales rolling statistics so the current target
+  cannot enter its own features.
+- Excluded the current target and current sales-outlier flag from predictors.
+- Removed 114,960 expected warm-up rows, including two first-validation rows
+  from late-starting product series without eight past weeks.
+- Saved 3,003,902 model-ready rows: 2,888,944 train, 57,478 validation, and
+  57,480 test rows.
+- Passed sentinel leakage, exact lag, chronological order, duplicate-key, and
+  required-null checks.
+- Rechecked all five raw-file SHA-256 hashes after feature generation; every
+  original file remains unchanged.
+- Saved feature definitions, split counts, missing-value counts, leakage
+  checks, and a feature summary in `reports/`.
 
 ## Current task
 
-Review the completed EDA results and build the leakage-safe feature table.
+Review the completed C3 outputs before starting model training.
 
 ## Next planned task
 
-Create past-only lag, rolling, price, and calendar features. Verify that no
-current or future target is used and save the local Parquet feature table.
+Create a simple baseline and record the first reproducible experiment with
+MLflow. This task has not started.
 
 ## Planned course route
 
@@ -124,4 +142,6 @@ current or future target is used and save the local Parquet feature table.
 - EDA-1 is published on `origin/main`.
 - EDA-2 is published on `origin/main`.
 - EDA-3 is published on `origin/main`.
-- EDA-4 is completed as the first verified milestone in the current C3 batch.
+- EDA-4 is published as the first verified milestone in the current C3 batch.
+- The leakage-safe feature table is published as the second verified milestone
+  in the current C3 batch.

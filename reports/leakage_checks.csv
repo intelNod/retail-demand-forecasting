@@ -1,0 +1,9 @@
+check,status,details
+continuous weekly index,PASS,"3,104,492 exact weekly gaps"
+same-week sentinel target does not change features,PASS,series position 20
+lag 1 equals previous target on sample series,PASS,exact shift(1) comparison
+target excluded from feature list,PASS,weekly_units_sold
+current sales outlier flag excluded,PASS,unavailable at prediction time
+chronological split order,PASS,train < validation < test
+duplicate feature keys,PASS,0
+required feature nulls,PASS,0

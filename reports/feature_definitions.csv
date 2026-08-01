@@ -1,0 +1,10 @@
+feature,source,rule,known_at_prediction
+sales_lag_1/2/4/8,past sales,group shift by exact weeks,True
+sales_roll_mean/std_4/8,past sales,shift(1) before rolling,True
+zero_weeks_last_4,past sales,"zeros after shift(1), rolling 4",True
+sell_price_mean,known weekly price,current forecast-week input,True
+price_lag_1/change_pct,price,current known price versus previous price,True
+year/month/week/quarter,calendar,derived from forecast week,True
+event_days/has_event,calendar,known event calendar,True
+snap_days/has_snap,calendar,known SNAP calendar,True
+has_sales_outlier,current sales,EXCLUDED: unavailable at prediction time,False

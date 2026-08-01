@@ -5,9 +5,9 @@ the M5 Forecasting — Accuracy dataset.
 
 ## Current progress
 
-The full read-only data audit, FOODS cleaning/preprocessing, EDA overview, and
-train-only time analysis are complete. All five source files were checked
-without changing `data/raw`.
+The full read-only data audit, FOODS cleaning/preprocessing, four EDA blocks,
+and leakage-safe feature engineering are complete. All five source files were
+checked without changing `data/raw`.
 
 Main verified findings:
 
@@ -58,6 +58,14 @@ rows. Event and no-event weeks have similar mean demand, SNAP weeks have a
 higher descriptive mean, and flagged outlier weeks represent 0.68% of rows.
 Price-band differences are reported as associations, not causal price effects.
 
+The feature notebook creates 4 categorical and 20 numeric predictors for a
+rolling one-week-ahead forecast. Sales lags and rolling statistics use past
+weeks only; the current target and current sales-outlier flag are excluded.
+After the required eight-week warm-up, 3,003,902 model-ready rows remain:
+2,888,944 train, 57,478 validation, and 57,480 test rows. The two removed
+validation rows belong to a late-starting product series that did not yet have
+eight past weeks. All leakage, null, duplicate-key, and split-order checks pass.
+
 ## Project structure
 
 ```text
@@ -72,6 +80,7 @@ notebooks/
   04_eda_demand_time.ipynb
   05_eda_stores_departments.ipynb
   06_eda_quality_factors.ipynb
+  07_feature_engineering.ipynb
 reports/
   data_file_inventory.csv
   data_audit_summary.csv
@@ -97,6 +106,11 @@ reports/
   eda_price_bands_train.csv
   eda_outlier_summary_train.csv
   eda_quality_factor_findings.csv
+  feature_definitions.csv
+  feature_missing_before_warmup.csv
+  feature_split_summary.csv
+  leakage_checks.csv
+  feature_summary.csv
 ```
 
 ## Run the audit
@@ -113,6 +127,8 @@ reports/
    department comparisons.
 9. Run `notebooks/06_eda_quality_factors.ipynb` for train-only quality-factor
    analysis.
+10. Run `notebooks/07_feature_engineering.ipynb` to create and verify the local
+    leakage-safe train, validation, and test feature files.
 
 [Open the audit notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/01_data_audit.ipynb)
 
@@ -126,9 +142,11 @@ reports/
 
 [Open the quality-factor EDA in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/06_eda_quality_factors.ipynb)
 
+[Open the feature-engineering notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/07_feature_engineering.ipynb)
+
 ## Safety and reproducibility
 
 Raw CSV files are excluded from GitHub because several exceed GitHub's regular
 file-size limit. Their SHA-256 hashes are recorded in
-`reports/data_file_inventory.csv`. Cleaning and feature engineering will write
-new files instead of overwriting the originals.
+`reports/data_file_inventory.csv`. Cleaning and feature engineering write new
+local files instead of overwriting the originals.

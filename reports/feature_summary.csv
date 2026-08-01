@@ -1,0 +1,9 @@
+metric,value
+source_rows,3118862
+model_ready_feature_rows,3003902
+warmup_rows_removed,114960
+categorical_features,4
+numeric_features,20
+duplicate_keys,0
+required_nulls,0
+saved_rows_verified,3003902
