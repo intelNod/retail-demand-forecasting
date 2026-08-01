@@ -1,0 +1,6 @@
+finding,value,supporting_metric
+largest demand-band MAE,high_21_plus,12.330514358940649
+largest store MAE,WI_2,6.501590491614383
+largest department MAE,FOODS_3,4.828276805691501
+p95 absolute error,units,14.755097893734533
+share within 5 units,percent,76.0786360473208

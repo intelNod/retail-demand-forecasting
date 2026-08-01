@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C5 completed: reusable inference, Flask API, and UI verified
+C6 in progress: final error analysis verified
 
 ## Completed
 
@@ -186,16 +186,27 @@ C5 completed: reusable inference, Flask API, and UI verified
   returned HTTP 200; the committed example produced 10.4885 units.
 - Expanded the automated suite to 18 passing validation, inference, API, and UI
   integration tests.
+- Created and executed a no-retraining final test error-analysis notebook.
+- Confirmed median absolute error 2.34 units, p95 absolute error 14.76 units,
+  and 76.08% of predictions within five units.
+- Found that high-demand rows (21+ units) are the main failure band, with MAE
+  12.33 and average underprediction of 5.10 units.
+- Identified `WI_2` as the weakest store slice and `FOODS_3` as the weakest
+  department slice by test MAE.
+- Saved 25 concrete worst-error examples for defense discussion and human
+  review guidance.
+- Passed all 12 final error-analysis scope, metric, row-accounting, and ordering
+  checks without changing the model after test.
 
 ## Current task
 
-Review the completed C5 inference demonstration before final reproducibility
-and submission checks.
+Package the final model and create a clean, focused demo that does not depend on
+hidden local MLflow state.
 
 ## Next planned task
 
-Complete C6: full clean-run checklist, repository review, submission safeguards,
-and defense preparation. This task has not started.
+Add a repository-contained final model artifact, a short demo notebook, and a
+fresh-clone reproducibility check.
 
 ## Planned course route
 
@@ -242,3 +253,4 @@ and defense preparation. This task has not started.
 - The verified Flask API, endpoint tests, and example request are published on
   `origin/main`.
 - The verified local prediction UI is published on `origin/main`.
+- The verified final error analysis is published on `origin/main`.

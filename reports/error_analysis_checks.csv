@@ -1,0 +1,13 @@
+check,status,details
+test split only,PASS,['test']
+expected test rows,PASS,57480
+no model fitting in notebook,PASS,load_model + predict only
+predictions finite,PASS,57480
+MAE matches final report,PASS,4.417919
+RMSE matches final report,PASS,9.132909
+demand-band row accounting,PASS,57480
+store row accounting,PASS,57480
+department row accounting,PASS,57480
+week row accounting,PASS,57480
+direction row accounting,PASS,57480
+worst cases sorted,PASS,25

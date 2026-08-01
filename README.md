@@ -94,6 +94,14 @@ RMSE 10.522. The final model improves test MAE by 7.72%. Its third finished
 MLflow run and reload check provide the final generalization evidence; test
 results are not used for another tuning round.
 
+Final error analysis shows that 76.08% of test predictions are within five
+units and the median absolute error is 2.34 units, but the error tail is much
+larger: p95 absolute error is 14.76 units. High-demand rows (21+ actual units)
+have MAE 12.33 and are underpredicted by 5.10 units on average. `WI_2` is the
+weakest store slice and `FOODS_3` the weakest department slice. These results
+support human review for unusual or high-volume forecasts and are not used for
+post-test tuning.
+
 The reusable inference layer validates the exact 20-feature contract, restores
 the final model from its local MLflow run, preserves feature order, rejects
 invalid numeric or calendar values, and returns a non-negative weekly demand
@@ -119,6 +127,7 @@ notebooks/
   09_linear_regression_mlflow.ipynb
   10_random_forest_mlflow.ipynb
   11_final_model_test.ipynb
+  12_final_error_analysis.ipynb
 reports/
   data_file_inventory.csv
   data_audit_summary.csv
@@ -171,6 +180,15 @@ reports/
   final_model_feature_importance.csv
   final_model_checks.csv
   mlflow_final_model_run.csv
+  error_analysis_summary.csv
+  error_analysis_demand_bands.csv
+  error_analysis_stores.csv
+  error_analysis_departments.csv
+  error_analysis_weeks.csv
+  error_analysis_directions.csv
+  error_analysis_worst_cases.csv
+  error_analysis_findings.csv
+  error_analysis_checks.csv
 src/
   validation.py
   inference.py
@@ -210,6 +228,8 @@ examples/
     model and select the best method using validation MAE.
 14. Run `notebooks/11_final_model_test.ipynb` only after selection to retrain
     the fixed model and reproduce its one-time final test evaluation.
+15. Run `notebooks/12_final_error_analysis.ipynb` to reproduce the frozen-model
+    residual and failure-mode analysis without another tuning round.
 
 [Open the audit notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/01_data_audit.ipynb)
 
@@ -232,6 +252,8 @@ examples/
 [Open the Random Forest experiment in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/10_random_forest_mlflow.ipynb)
 
 [Open the final model test in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/11_final_model_test.ipynb)
+
+[Open the final error analysis in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/12_final_error_analysis.ipynb)
 
 ## Safety and reproducibility
 
