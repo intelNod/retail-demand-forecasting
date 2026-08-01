@@ -1,0 +1,2 @@
+experiment_name,run_name,run_id,tracking_uri,sklearn_version,mlflow_version,fit_rows,test_rows,feature_count,fit_seconds,predict_seconds,run_status,model_reload_check,reloaded_test_mae,test_mae,test_rmse,test_baseline_mae,test_mae_improvement_pct
+retail-demand-forecasting,random-forest-final-train-validation-v1,b187f054f1714740b6db24adde44e620,sqlite:///mlflow.db,1.7.2,3.15.0,2946422,57480,20,162.45605630000045,0.0857389000002513,FINISHED,PASS,4.417918859203556,4.4179188592035565,9.1329085133756,4.787413120269775,7.718035853262596

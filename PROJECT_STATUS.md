@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C4 in progress: Random Forest selected on validation
+C4 completed: final Random Forest test verified
 
 ## Completed
 
@@ -141,16 +141,28 @@ C4 in progress: Random Forest selected on validation
   and model-reload checks.
 - Confirmed that lag 1 and the previous four-week mean are the two most
   important Random Forest inputs; importance is not treated as causality.
+- Froze the selected Random Forest parameters before accessing test targets.
+- Retrained the fixed model on 2,946,422 combined train-plus-validation rows.
+- Performed one final evaluation on all 57,480 test rows across four later
+  weeks without another tuning round.
+- Measured final test MAE 4.418 and RMSE 9.133, compared with baseline MAE
+  4.787 and RMSE 10.522.
+- Confirmed a 7.72% final test MAE improvement over the four-week-mean
+  baseline.
+- Recorded the third finished MLflow run with the final fitted model and test
+  evidence.
+- Reloaded the final MLflow model and reproduced test MAE 4.418.
+- Passed all 17 selection, parameter, split, prediction, row-accounting,
+  MLflow-status, and final-model reload checks.
 
 ## Current task
 
-Freeze Random Forest as the validation-selected model and perform its one-time
-test evaluation.
+Review the completed C4 model evidence before building the inference workflow.
 
 ## Next planned task
 
-Retrain the selected Random Forest on train plus validation, evaluate test once,
-and save the final model-selection evidence.
+Create a small reusable prediction function and Flask/REST endpoint around the
+saved final model, including input validation. This task has not started.
 
 ## Planned course route
 
@@ -189,4 +201,6 @@ and save the final model-selection evidence.
 - The verified Linear Regression + MLflow experiment is published on
   `origin/main`.
 - The verified Random Forest selection experiment is published on
+  `origin/main`.
+- The verified final Random Forest test and third MLflow run are published on
   `origin/main`.

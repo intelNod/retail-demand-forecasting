@@ -1,0 +1,18 @@
+check,status,details
+Random Forest selected before test,PASS,validation MAE 4.269810
+fixed parameters match selection run,PASS,7
+expected final fit rows,PASS,2946422
+expected test rows,PASS,57480
+final fit contains train and validation only,PASS,"['train', 'validation']"
+test split only,PASS,['test']
+chronological final fit before test,PASS,fit max < test min
+target excluded from features,PASS,weekly_units_sold
+model inputs contain no nulls,PASS,fit and test
+finite test predictions,PASS,57480
+non-negative test predictions,PASS,non-negative training target
+fitted tree count,PASS,40
+feature importance total,PASS,1.000000
+store row accounting,PASS,57480
+department row accounting,PASS,57480
+final MLflow run finished,PASS,FINISHED
+final model reload reproduces test MAE,PASS,4.417919

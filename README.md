@@ -87,6 +87,13 @@ the selected validation model. Training took about 160 seconds locally. The
 MLflow model reload check passes, and test targets are still untouched at this
 selection point.
 
+After selection was frozen, the same Random Forest parameters were retrained
+on 2,946,422 train-plus-validation rows and evaluated once on 57,480 test rows.
+Final test MAE is 4.418 and RMSE is 9.133, compared with baseline MAE 4.787 and
+RMSE 10.522. The final model improves test MAE by 7.72%. Its third finished
+MLflow run and reload check provide the final generalization evidence; test
+results are not used for another tuning round.
+
 ## Project structure
 
 ```text
@@ -105,6 +112,7 @@ notebooks/
   08_baseline.ipynb
   09_linear_regression_mlflow.ipynb
   10_random_forest_mlflow.ipynb
+  11_final_model_test.ipynb
 reports/
   data_file_inventory.csv
   data_audit_summary.csv
@@ -151,6 +159,12 @@ reports/
   random_forest_feature_importance.csv
   random_forest_checks.csv
   mlflow_random_forest_run.csv
+  final_test_metrics.csv
+  final_test_store_metrics.csv
+  final_test_department_metrics.csv
+  final_model_feature_importance.csv
+  final_model_checks.csv
+  mlflow_final_model_run.csv
 ```
 
 ## Run the audit
@@ -175,6 +189,8 @@ reports/
     compare it with the baseline, and record the local MLflow experiment.
 13. Run `notebooks/10_random_forest_mlflow.ipynb` to train the controlled tree
     model and select the best method using validation MAE.
+14. Run `notebooks/11_final_model_test.ipynb` only after selection to retrain
+    the fixed model and reproduce its one-time final test evaluation.
 
 [Open the audit notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/01_data_audit.ipynb)
 
@@ -195,6 +211,8 @@ reports/
 [Open the Linear Regression experiment in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/09_linear_regression_mlflow.ipynb)
 
 [Open the Random Forest experiment in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/10_random_forest_mlflow.ipynb)
+
+[Open the final model test in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/11_final_model_test.ipynb)
 
 ## Safety and reproducibility
 
