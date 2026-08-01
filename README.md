@@ -228,6 +228,11 @@ models/
   README.md
   final_model/       committed MLflow/skops inference artifact
 demo.ipynb           focused clean-runtime inference demo
+submission/
+  submission_details.docx
+  defense_presentation.pptx
+  DEFENSE_SCRIPT.md
+  SUBMISSION_CHECKLIST.md
 ```
 
 ## Run the audit
@@ -356,3 +361,14 @@ Run all validation, inference, and API tests with:
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
+
+## Submission and defense
+
+The final LMS details document, 10-slide defense deck, speaking guide, and
+manual submission checklist are in [`submission/`](submission/). The deck is
+designed for a 10-minute explanation and includes source notes. A requirement-
+to-evidence map is available in [`RUBRIC_CHECKLIST.md`](RUBRIC_CHECKLIST.md).
+
+Meaningful development assistance is acknowledged in
+[`ASSISTANCE.md`](ASSISTANCE.md). The student should review and understand every
+submitted component. After the final LMS upload, do not commit or push again.

@@ -6,8 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C6 in progress: clean-clone reproduction passed; final submission materials in
-preparation
+C6 final review: submission and defense materials prepared
 
 ## Completed
 
@@ -217,15 +216,22 @@ preparation
   clean environment.
 - Documented dataset access terms, reproducibility evidence, intended use,
   limitations, risks, and human-review safeguards.
+- Created a one-page LMS submission-details document with repository and Colab
+  links, project summary, and verified metrics.
+- Created and visually reviewed a 10-slide defense presentation with real
+  charts, speaker notes, and source blocks.
+- Passed the presentation overflow test and inspected all ten rendered slides.
+- Added a timed 10-minute defense guide, likely-question answers, final manual
+  submission checklist, rubric evidence map, and assistance acknowledgement.
 
 ## Current task
 
-Prepare and verify final submission and defense materials.
+Run the final repository audit and prepare the handoff for manual LMS upload.
 
 ## Next planned task
 
-Complete the final rubric checklist, LMS submission details, and 10-minute
-defense package; then run the final repository review before submission.
+Student reviews the presentation and speaking guide, confirms mentor/deadline
+details, submits through LMS, and makes no commits afterward.
 
 ## Planned course route
 
