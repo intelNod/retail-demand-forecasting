@@ -28,16 +28,20 @@ def load_final_model(root: str | None = None) -> Any:
         return mlflow.sklearn.load_model(model_uri_override)
 
     root_path = Path(root).resolve() if root else project_root()
+    standalone_model_path = root_path / "models" / "final_model"
     summary_path = root_path / "reports" / "mlflow_final_model_run.csv"
     database_path = root_path / "mlflow.db"
 
+    if (standalone_model_path / "MLmodel").exists():
+        return mlflow.sklearn.load_model(str(standalone_model_path))
+
     if not summary_path.exists():
         raise FileNotFoundError(
-            "Final model summary was not found. Run notebook 11 first."
+            "Final model artifact and run summary were not found."
         )
     if not database_path.exists():
         raise FileNotFoundError(
-            "Local MLflow database was not found. Run notebook 11 first."
+            "Local MLflow database was not found. Run notebook 11 to recreate it."
         )
 
     summary = pd.read_csv(summary_path)

@@ -103,10 +103,16 @@ support human review for unusual or high-volume forecasts and are not used for
 post-test tuning.
 
 The reusable inference layer validates the exact 20-feature contract, restores
-the final model from its local MLflow run, preserves feature order, rejects
+the repository-contained final model, preserves feature order, rejects
 invalid numeric or calendar values, and returns a non-negative weekly demand
 forecast. Unit tests use a lightweight test model, while a separate smoke check
 confirmed that the function exactly matches the real final Random Forest.
+
+The focused root-level `demo.ipynb` is the primary clean-runtime demonstration.
+It clones the repository when opened in Colab, installs documented dependencies,
+loads the committed 20.5 MB MLflow/skops model, predicts the documented example,
+and shows safe rejection of invalid input. It needs neither the original M5
+files nor hidden local MLflow state.
 
 ## Project structure
 
@@ -202,9 +208,20 @@ tests/
   test_api.py
 examples/
   predict_request.json
+models/
+  README.md
+  final_model/       committed MLflow/skops inference artifact
+demo.ipynb           focused clean-runtime inference demo
 ```
 
 ## Run the audit
+
+For the shortest reproducible assessment path, open and run the focused demo:
+
+[Open the clean inference demo in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/demo.ipynb)
+
+The full data and training workflow is reproduced by the numbered notebooks
+below.
 
 1. Download the five M5 files listed in `data/README.md`.
 2. Place them in `data/raw`.
@@ -262,14 +279,15 @@ file-size limit. Their SHA-256 hashes are recorded in
 `reports/data_file_inventory.csv`. Cleaning and feature engineering write new
 local files instead of overwriting the originals.
 
-MLflow metadata (`mlflow.db`) and model artifacts (`mlruns/`) are generated
-locally and excluded from Git. The committed run summary and verification
-reports preserve the experiment ID, versions, parameters, and metrics.
+MLflow tracking metadata (`mlflow.db`) and development artifacts (`mlruns/`)
+are generated locally and excluded from Git. The final 20.5 MB inference model
+is committed separately in `models/final_model/`, with its SHA-256 checksum and
+origin documented in `models/README.md`. Committed run summaries preserve the
+experiment IDs, versions, parameters, and metrics.
 
 ## Reusable prediction function
 
-After notebook 11 has created the local final MLflow run, call the reusable
-function from the repository root:
+Call the reusable function from the repository root:
 
 ```python
 from src.inference import predict_weekly_demand
@@ -283,8 +301,7 @@ values raise a clear validation error before the model is called.
 
 ## Flask prediction API
 
-Start the local demonstration server after notebook 11 has created the final
-MLflow model:
+Start the local demonstration server after installing the requirements:
 
 ```powershell
 .\.venv\Scripts\python.exe -m src.app

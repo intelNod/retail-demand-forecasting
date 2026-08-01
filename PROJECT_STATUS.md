@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C6 in progress: final error analysis verified
+C6 in progress: standalone model and clean demo verified locally
 
 ## Completed
 
@@ -197,16 +197,26 @@ C6 in progress: final error analysis verified
   review guidance.
 - Passed all 12 final error-analysis scope, metric, row-accounting, and ordering
   checks without changing the model after test.
+- Exported the final MLflow/skops artifact into `models/final_model/` so a clean
+  clone does not depend on the ignored local MLflow database.
+- Recorded the 20,523,283-byte model file SHA-256 and final run provenance in
+  `models/README.md`.
+- Removed the copied local absolute path from the portable MLflow metadata.
+- Updated reusable inference to prefer the repository-contained model while
+  keeping the original MLflow run as a documented fallback.
+- Created and executed a focused root-level demo notebook with a normal example
+  and an expected invalid-input example.
+- Confirmed the standalone artifact loads 40 trees and reproduces the real
+  example forecast without raw data, processed data, or `mlflow.db`.
 
 ## Current task
 
-Package the final model and create a clean, focused demo that does not depend on
-hidden local MLflow state.
+Run the committed demo from a fresh clone and fresh Python environment.
 
 ## Next planned task
 
-Add a repository-contained final model artifact, a short demo notebook, and a
-fresh-clone reproducibility check.
+Complete the fresh-clone reproduction check, then document Responsible AI,
+licensing, the final rubric checklist, submission details, and defense plan.
 
 ## Planned course route
 
@@ -254,3 +264,5 @@ fresh-clone reproducibility check.
   `origin/main`.
 - The verified local prediction UI is published on `origin/main`.
 - The verified final error analysis is published on `origin/main`.
+- The standalone final model and focused clean demo are published on
+  `origin/main`.

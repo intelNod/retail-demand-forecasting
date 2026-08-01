@@ -5,9 +5,9 @@ and two small REST endpoints. Run commands from the repository root.
 
 ## Prerequisites
 
-1. Install `requirements.txt`.
-2. Run notebooks 01–11 in order. Notebook 11 creates the local `mlflow.db` and
-   final model artifact required by the API.
+1. Clone or download the repository.
+2. Install `requirements.txt`. The final inference model is already stored in
+   `models/final_model/`; no dataset or local MLflow database is required.
 
 ## Start the server
 
