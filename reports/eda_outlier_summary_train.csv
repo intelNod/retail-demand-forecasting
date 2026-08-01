@@ -1,0 +1,3 @@
+has_sales_outlier,rows,mean_weekly_units,maximum_weekly_units,flagged_daily_values,group,share_pct
+0,2983521,12.780861606135838,316,0,not flagged,99.3215158150965
+1,20381,300.3337422108827,3976,53194,flagged week,0.6784841849035022

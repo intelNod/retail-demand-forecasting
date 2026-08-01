@@ -52,6 +52,12 @@ has the highest mean and total demand, while `FOODS_2` has the highest
 zero-demand share. These are descriptive differences and do not prove their
 causes.
 
+The final EDA block uses training targets only to review zero demand, prices,
+events, SNAP, and flagged outliers. Zero demand represents 20.72% of training
+rows. Event and no-event weeks have similar mean demand, SNAP weeks have a
+higher descriptive mean, and flagged outlier weeks represent 0.68% of rows.
+Price-band differences are reported as associations, not causal price effects.
+
 ## Project structure
 
 ```text
@@ -65,6 +71,7 @@ notebooks/
   03_eda_overview.ipynb
   04_eda_demand_time.ipynb
   05_eda_stores_departments.ipynb
+  06_eda_quality_factors.ipynb
 reports/
   data_file_inventory.csv
   data_audit_summary.csv
@@ -83,6 +90,13 @@ reports/
   eda_store_statistics_train.csv
   eda_department_statistics_train.csv
   eda_store_department_findings.csv
+  eda_zero_demand_train.csv
+  eda_event_summary_train.csv
+  eda_snap_summary_train.csv
+  eda_event_names_train.csv
+  eda_price_bands_train.csv
+  eda_outlier_summary_train.csv
+  eda_quality_factor_findings.csv
 ```
 
 ## Run the audit
@@ -97,6 +111,8 @@ reports/
 7. Run `notebooks/04_eda_demand_time.ipynb` for train-only time analysis.
 8. Run `notebooks/05_eda_stores_departments.ipynb` for train-only store and
    department comparisons.
+9. Run `notebooks/06_eda_quality_factors.ipynb` for train-only quality-factor
+   analysis.
 
 [Open the audit notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/01_data_audit.ipynb)
 
@@ -107,6 +123,8 @@ reports/
 [Open the time EDA in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/04_eda_demand_time.ipynb)
 
 [Open the store and department EDA in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/05_eda_stores_departments.ipynb)
+
+[Open the quality-factor EDA in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/06_eda_quality_factors.ipynb)
 
 ## Safety and reproducibility
 

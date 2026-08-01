@@ -1,0 +1,3 @@
+has_snap,rows,mean_weekly_units,total_units,zero_demand_weeks,group,zero_demand_pct
+True,1846490,15.26461015223478,28185950,378041,SNAP week,20.47349295149175
+False,1157412,13.881937460472157,16067121,244302,no SNAP,21.107609045007308

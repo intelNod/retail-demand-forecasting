@@ -1,0 +1,3 @@
+has_event,rows,mean_weekly_units,total_units,zero_demand_weeks,group,zero_demand_pct
+True,1453355,14.79756356843304,21506113,300625,event week,20.684898046244722
+False,1550547,14.670279585204447,22746958,321718,no event,20.748677724699736

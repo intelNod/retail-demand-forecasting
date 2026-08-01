@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-EDA-3 train-only store and department analysis completed
+EDA-4 train-only quality-factor analysis completed
 
 ## Completed
 
@@ -73,16 +73,26 @@ EDA-3 train-only store and department analysis completed
 - Confirmed that all 3,003,902 training rows are represented once in both the
   store and department summaries.
 - Saved store, department, and reproducible finding reports for EDA-3.
+- Created and executed the train-only quality-factor EDA notebook.
+- Confirmed that zero demand represents 20.72% of training product-weeks.
+- Compared event and no-event weeks without claiming a causal event effect.
+- Compared SNAP and no-SNAP weeks without claiming a causal SNAP effect.
+- Compared four training-derived price bands and documented product-mix
+  confounding.
+- Confirmed that flagged outlier weeks represent 0.68% of training rows and
+  remain in the dataset.
+- Verified full row accounting for zero, event, SNAP, price, and outlier
+  summaries.
+- Saved seven small train-only EDA-4 reports.
 
 ## Current task
 
-Review the train-only EDA-3 results before analyzing zeros, prices, events, and
-outliers.
+Review the completed EDA results and build the leakage-safe feature table.
 
 ## Next planned task
 
-Create EDA-4 for zero demand, prices, events, SNAP, and outliers. It will use
-training data only, without creating features or training a model.
+Create past-only lag, rolling, price, and calendar features. Verify that no
+current or future target is used and save the local Parquet feature table.
 
 ## Planned course route
 
@@ -113,4 +123,5 @@ training data only, without creating features or training a model.
 - The FOODS cleaning milestone is published on `origin/main`.
 - EDA-1 is published on `origin/main`.
 - EDA-2 is published on `origin/main`.
-- EDA-3 is completed locally and awaiting review before push.
+- EDA-3 is published on `origin/main`.
+- EDA-4 is completed as the first verified milestone in the current C3 batch.
