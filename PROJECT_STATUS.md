@@ -6,7 +6,8 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C6 in progress: standalone model and clean demo verified locally
+C6 in progress: clean-clone reproduction passed; final submission materials in
+preparation
 
 ## Completed
 
@@ -208,15 +209,23 @@ C6 in progress: standalone model and clean demo verified locally
   and an expected invalid-input example.
 - Confirmed the standalone artifact loads 40 trees and reproduces the real
   example forecast without raw data, processed data, or `mlflow.db`.
+- Cloned GitHub commit `8c5a5f1` into a new temporary directory and created a
+  fresh Python 3.10 environment.
+- Installed all declared requirements and executed `demo.ipynb` successfully
+  from the clean clone with no raw/processed CSV files and no `mlflow.db`.
+- Reproduced the example prediction of 10.4885 and passed all 18 tests in the
+  clean environment.
+- Documented dataset access terms, reproducibility evidence, intended use,
+  limitations, risks, and human-review safeguards.
 
 ## Current task
 
-Run the committed demo from a fresh clone and fresh Python environment.
+Prepare and verify final submission and defense materials.
 
 ## Next planned task
 
-Complete the fresh-clone reproduction check, then document Responsible AI,
-licensing, the final rubric checklist, submission details, and defense plan.
+Complete the final rubric checklist, LMS submission details, and 10-minute
+defense package; then run the final repository review before submission.
 
 ## Planned course route
 

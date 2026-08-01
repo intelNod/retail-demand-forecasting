@@ -3,6 +3,19 @@
 The project uses three main data stages. This keeps the original M5 files
 separate from temporary and cleaned results.
 
+## Source and permitted use
+
+The source is the **M5 Forecasting - Accuracy** competition dataset published
+on Kaggle by the University of Nicosia with Walmart sales data:
+
+https://www.kaggle.com/competitions/m5-forecasting-accuracy/data
+
+Download requires a Kaggle account and acceptance of the competition rules.
+This repository does not redistribute the source CSV files and does not claim
+that they have an open-source license. Anyone reproducing the full workflow is
+responsible for following Kaggle's competition and data-use terms. The dataset
+is used here only for an educational capstone.
+
 ## `raw`
 
 Original downloaded M5 files:
@@ -32,5 +45,5 @@ larger than GitHub's regular file-size limit. Git tracks the folder structure,
 code, notebooks, audit reports, cleaning reports, and instructions needed to
 repeat every step.
 
-The old `synthetic` folder contains temporary development outputs and is not the
-main dataset for the full M5 audit.
+No synthetic dataset is used by the published modeling workflow. The audit,
+cleaning, EDA, features, training, and evaluation all use the M5 source files.

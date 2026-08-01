@@ -3,6 +3,17 @@
 AI/ML Fundamentals capstone project for weekly product-demand forecasting with
 the M5 Forecasting — Accuracy dataset.
 
+- **Student:** Nosirov Nodir, Tulpar
+- **Track and scenario:** Field-Based Scenario, RET-01 (RetailTech)
+- **Stakeholder:** retail inventory planner
+- **ML task:** supervised regression for one-week-ahead unit demand
+- **Repository:** https://github.com/intelNod/retail-demand-forecasting
+
+The business question is whether past sales, recent prices, and known calendar
+information can improve weekly product-store demand estimates over a simple
+four-week moving-average forecast. The final controlled Random Forest reduces
+test MAE from 4.787 to 4.418 units, a 7.72% improvement over that baseline.
+
 ## Current progress
 
 The full read-only data audit, FOODS cleaning/preprocessing, four EDA blocks,
@@ -113,6 +124,11 @@ It clones the repository when opened in Colab, installs documented dependencies,
 loads the committed 20.5 MB MLflow/skops model, predicts the documented example,
 and shows safe rejection of invalid input. It needs neither the original M5
 files nor hidden local MLflow state.
+
+A fresh-clone check on 01.08.2026 installed all dependencies in a new Python
+3.10 environment, executed the notebook without errors, reproduced the 10.4885
+example forecast, and passed all 18 tests. Details are in
+[`REPRODUCIBILITY.md`](REPRODUCIBILITY.md).
 
 ## Project structure
 
@@ -284,6 +300,23 @@ are generated locally and excluded from Git. The final 20.5 MB inference model
 is committed separately in `models/final_model/`, with its SHA-256 checksum and
 origin documented in `models/README.md`. Committed run summaries preserve the
 experiment IDs, versions, parameters, and metrics.
+
+The dataset source, access terms, and non-redistribution approach are documented
+in [`data/README.md`](data/README.md). The full clean-runtime and training paths
+are in [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md).
+
+## Model choice and limitations
+
+Three finished MLflow runs preserve the Linear Regression validation result,
+Random Forest validation selection, and final train-plus-validation fit. Linear
+Regression did not beat the baseline. The Random Forest did, using the same 20
+leakage-safe numeric features, so it was frozen before the one-time test.
+
+This is an educational decision-support model, not an automatic replenishment
+system. It was trained on 2011-2016 US Walmart FOODS data and has not been
+validated for Uzbekistan, new products, other retailers, or current market
+conditions. High-demand items need extra human review. See
+[`RESPONSIBLE_AI.md`](RESPONSIBLE_AI.md) for risks and safeguards.
 
 ## Reusable prediction function
 
