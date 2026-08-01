@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C4 in progress: baseline and first MLflow model verified
+C4 in progress: Random Forest selected on validation
 
 ## Completed
 
@@ -128,17 +128,29 @@ C4 in progress: baseline and first MLflow model verified
   model-reload checks.
 - Saved model metrics, grouped results, standardized coefficients, checks, and
   the MLflow run summary in `reports/`.
+- Created and executed the controlled Random Forest + MLflow notebook.
+- Trained 40 depth-limited trees on all 2,888,944 training rows using the same
+  20 numeric features as Linear Regression.
+- Measured validation MAE 4.270 and RMSE 9.137 on 57,478 later rows.
+- Improved on the four-week-mean baseline by 5.48% in validation MAE.
+- Selected Random Forest over the baseline and Linear Regression using
+  validation only; test remained untouched during selection.
+- Recorded the second finished MLflow run and reloaded its model to reproduce
+  validation MAE 4.270.
+- Passed all 16 split, prediction, tree, importance, row-accounting, MLflow,
+  and model-reload checks.
+- Confirmed that lag 1 and the previous four-week mean are the two most
+  important Random Forest inputs; importance is not treated as causality.
 
 ## Current task
 
-Review the completed Linear Regression experiment and retain the four-week mean
-as the current best validation method.
+Freeze Random Forest as the validation-selected model and perform its one-time
+test evaluation.
 
 ## Next planned task
 
-Design one course-appropriate tree-model experiment on the same chronological
-split, with runtime and memory kept suitable for Colab. This task has not
-started.
+Retrain the selected Random Forest on train plus validation, evaluate test once,
+and save the final model-selection evidence.
 
 ## Planned course route
 
@@ -175,4 +187,6 @@ started.
   in the current C3 batch.
 - The verified validation baseline is published on `origin/main`.
 - The verified Linear Regression + MLflow experiment is published on
+  `origin/main`.
+- The verified Random Forest selection experiment is published on
   `origin/main`.

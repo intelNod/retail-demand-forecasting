@@ -80,6 +80,13 @@ baseline by MAE and is not selected as the final model. The experiment is still
 valuable evidence: MLflow recorded a finished run, and the saved model was
 reloaded to reproduce the same MAE. The test period remains unused.
 
+The controlled Random Forest uses the same train rows, features, and validation
+period. With 40 depth-limited trees, it reaches validation MAE 4.270 and RMSE
+9.137. This improves on the four-week-mean baseline by 5.48% in MAE and becomes
+the selected validation model. Training took about 160 seconds locally. The
+MLflow model reload check passes, and test targets are still untouched at this
+selection point.
+
 ## Project structure
 
 ```text
@@ -97,6 +104,7 @@ notebooks/
   07_feature_engineering.ipynb
   08_baseline.ipynb
   09_linear_regression_mlflow.ipynb
+  10_random_forest_mlflow.ipynb
 reports/
   data_file_inventory.csv
   data_audit_summary.csv
@@ -137,6 +145,12 @@ reports/
   linear_regression_coefficients.csv
   linear_regression_checks.csv
   mlflow_linear_regression_run.csv
+  random_forest_metrics_validation.csv
+  random_forest_store_metrics_validation.csv
+  random_forest_department_metrics_validation.csv
+  random_forest_feature_importance.csv
+  random_forest_checks.csv
+  mlflow_random_forest_run.csv
 ```
 
 ## Run the audit
@@ -159,6 +173,8 @@ reports/
     baselines without using test targets.
 12. Run `notebooks/09_linear_regression_mlflow.ipynb` to train the first model,
     compare it with the baseline, and record the local MLflow experiment.
+13. Run `notebooks/10_random_forest_mlflow.ipynb` to train the controlled tree
+    model and select the best method using validation MAE.
 
 [Open the audit notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/01_data_audit.ipynb)
 
@@ -177,6 +193,8 @@ reports/
 [Open the baseline notebook in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/08_baseline.ipynb)
 
 [Open the Linear Regression experiment in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/09_linear_regression_mlflow.ipynb)
+
+[Open the Random Forest experiment in Google Colab](https://colab.research.google.com/github/intelNod/retail-demand-forecasting/blob/main/notebooks/10_random_forest_mlflow.ipynb)
 
 ## Safety and reproducibility
 
