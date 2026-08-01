@@ -174,9 +174,13 @@ reports/
 src/
   validation.py
   inference.py
+  app.py
 tests/
   test_validation.py
   test_inference.py
+  test_api.py
+examples/
+  predict_request.json
 ```
 
 ## Run the audit
@@ -251,3 +255,24 @@ prediction = predict_weekly_demand(feature_values)
 `feature_values` must contain the 20 numeric fields defined in
 `src/validation.py`. Missing, unknown, non-finite, inconsistent, or out-of-range
 values raise a clear validation error before the model is called.
+
+## Flask prediction API
+
+Start the local demonstration server after notebook 11 has created the final
+MLflow model:
+
+```powershell
+.\.venv\Scripts\python.exe -m src.app
+```
+
+The service provides `GET /health` and `POST /predict` at
+`http://127.0.0.1:5000`. A complete request is stored in
+`examples/predict_request.json`; endpoint details and PowerShell commands are
+in [API.md](API.md). The API is a local course demonstration, not a public
+production deployment.
+
+Run all validation, inference, and API tests with:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```

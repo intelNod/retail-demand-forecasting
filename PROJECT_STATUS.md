@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C5 in progress: reusable inference function verified
+C5 completed: reusable inference and Flask API verified
 
 ## Completed
 
@@ -164,16 +164,28 @@ C5 in progress: reusable inference function verified
 - Passed ten unit tests for validation and inference behavior.
 - Confirmed with the real final Random Forest that reusable and direct
   predictions match exactly.
+- Added a Flask application that loads the final model lazily and reuses the
+  same validation and prediction functions.
+- Added `GET /`, `GET /health`, and `POST /predict` endpoints.
+- Added explicit HTTP responses for invalid JSON, invalid features, missing
+  local model artifacts, and successful weekly forecasts.
+- Added a complete 20-feature example request and beginner-friendly API run
+  instructions.
+- Passed all 16 validation, inference, and Flask endpoint unit tests.
+- Started the real local server, verified `/health` returned HTTP 200 with the
+  final model loaded, and verified `/predict` returned 10.4885 units for the
+  committed example request.
+- Stopped the temporary verification server after the successful HTTP test.
 
 ## Current task
 
-Build and verify the Flask wrapper around the completed reusable inference
-function.
+Review the completed C5 inference demonstration before final reproducibility
+and submission checks.
 
 ## Next planned task
 
-Add `/health` and `/predict` endpoints, API tests, an example request, and
-beginner-friendly run instructions.
+Complete C6: full clean-run checklist, repository review, submission safeguards,
+and defense preparation. This task has not started.
 
 ## Planned course route
 
@@ -216,4 +228,6 @@ beginner-friendly run instructions.
 - The verified final Random Forest test and third MLflow run are published on
   `origin/main`.
 - The verified reusable validation and prediction functions are published on
+  `origin/main`.
+- The verified Flask API, endpoint tests, and example request are published on
   `origin/main`.
