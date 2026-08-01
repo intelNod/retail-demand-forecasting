@@ -94,6 +94,12 @@ RMSE 10.522. The final model improves test MAE by 7.72%. Its third finished
 MLflow run and reload check provide the final generalization evidence; test
 results are not used for another tuning round.
 
+The reusable inference layer validates the exact 20-feature contract, restores
+the final model from its local MLflow run, preserves feature order, rejects
+invalid numeric or calendar values, and returns a non-negative weekly demand
+forecast. Unit tests use a lightweight test model, while a separate smoke check
+confirmed that the function exactly matches the real final Random Forest.
+
 ## Project structure
 
 ```text
@@ -165,6 +171,12 @@ reports/
   final_model_feature_importance.csv
   final_model_checks.csv
   mlflow_final_model_run.csv
+src/
+  validation.py
+  inference.py
+tests/
+  test_validation.py
+  test_inference.py
 ```
 
 ## Run the audit
@@ -224,3 +236,18 @@ local files instead of overwriting the originals.
 MLflow metadata (`mlflow.db`) and model artifacts (`mlruns/`) are generated
 locally and excluded from Git. The committed run summary and verification
 reports preserve the experiment ID, versions, parameters, and metrics.
+
+## Reusable prediction function
+
+After notebook 11 has created the local final MLflow run, call the reusable
+function from the repository root:
+
+```python
+from src.inference import predict_weekly_demand
+
+prediction = predict_weekly_demand(feature_values)
+```
+
+`feature_values` must contain the 20 numeric fields defined in
+`src/validation.py`. Missing, unknown, non-finite, inconsistent, or out-of-range
+values raise a clear validation error before the model is called.

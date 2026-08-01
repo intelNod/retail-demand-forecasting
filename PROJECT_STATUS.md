@@ -6,7 +6,7 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C4 completed: final Random Forest test verified
+C5 in progress: reusable inference function verified
 
 ## Completed
 
@@ -154,15 +154,26 @@ C4 completed: final Random Forest test verified
 - Reloaded the final MLflow model and reproduced test MAE 4.418.
 - Passed all 17 selection, parameter, split, prediction, row-accounting,
   MLflow-status, and final-model reload checks.
+- Added a reusable 20-feature input-validation contract.
+- Added clear checks for missing, unknown, non-numeric, non-finite, negative,
+  out-of-range, and inconsistent calendar/SNAP/event values.
+- Added a cached final-model loader using the committed MLflow run summary and
+  local SQLite tracking database.
+- Added a reusable function that preserves feature order and returns a
+  non-negative weekly demand forecast.
+- Passed ten unit tests for validation and inference behavior.
+- Confirmed with the real final Random Forest that reusable and direct
+  predictions match exactly.
 
 ## Current task
 
-Review the completed C4 model evidence before building the inference workflow.
+Build and verify the Flask wrapper around the completed reusable inference
+function.
 
 ## Next planned task
 
-Create a small reusable prediction function and Flask/REST endpoint around the
-saved final model, including input validation. This task has not started.
+Add `/health` and `/predict` endpoints, API tests, an example request, and
+beginner-friendly run instructions.
 
 ## Planned course route
 
@@ -203,4 +214,6 @@ saved final model, including input validation. This task has not started.
 - The verified Random Forest selection experiment is published on
   `origin/main`.
 - The verified final Random Forest test and third MLflow run are published on
+  `origin/main`.
+- The verified reusable validation and prediction functions are published on
   `origin/main`.
