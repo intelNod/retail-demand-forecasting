@@ -100,6 +100,19 @@ def validate_prediction_input(payload: Mapping[str, Any]) -> dict[str, float]:
     if validated["price_change_pct"] < -1:
         raise InputValidationError("Field 'price_change_pct' cannot be below -1.")
 
+    expected_price_change = (
+        validated["sell_price_mean"] - validated["price_lag_1"]
+    ) / validated["price_lag_1"]
+    if not math.isclose(
+        validated["price_change_pct"],
+        expected_price_change,
+        rel_tol=1e-6,
+        abs_tol=1e-6,
+    ):
+        raise InputValidationError(
+            "Field 'price_change_pct' does not match current and previous prices."
+        )
+
     for field, (minimum, maximum) in INTEGER_RANGES.items():
         value = validated[field]
         if not value.is_integer() or not minimum <= value <= maximum:

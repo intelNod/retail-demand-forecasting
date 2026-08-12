@@ -42,6 +42,36 @@ class ValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(InputValidationError, "does not match"):
             validate_prediction_input(payload)
 
+    def test_inconsistent_price_change_is_rejected(self) -> None:
+        payload = {
+            **VALID_INPUT,
+            "sell_price_mean": 2.49,
+            "price_lag_1": 2.49,
+            "price_change_pct": 0.5,
+        }
+        with self.assertRaisesRegex(InputValidationError, "price_change_pct"):
+            validate_prediction_input(payload)
+
+    def test_consistent_price_increase_is_accepted(self) -> None:
+        payload = {
+            **VALID_INPUT,
+            "sell_price_mean": 3.0,
+            "price_lag_1": 2.0,
+            "price_change_pct": 0.5,
+        }
+        result = validate_prediction_input(payload)
+        self.assertEqual(result["price_change_pct"], 0.5)
+
+    def test_consistent_price_decrease_is_accepted(self) -> None:
+        payload = {
+            **VALID_INPUT,
+            "sell_price_mean": 1.0,
+            "price_lag_1": 2.0,
+            "price_change_pct": -0.5,
+        }
+        result = validate_prediction_input(payload)
+        self.assertEqual(result["price_change_pct"], -0.5)
+
 
 if __name__ == "__main__":
     unittest.main()

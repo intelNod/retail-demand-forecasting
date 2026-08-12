@@ -6,10 +6,18 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C6 defense preparation: comprehensive guide complete; presentation revision
-still required
+C6 defense preparation and verified debugging: comprehensive guide complete;
+presentation review still required
 
 ## Completed
+
+- Completed one controlled debugging cycle for the prediction input contract.
+- Reproduced and fixed a validation defect: contradictory current price,
+  previous price, and percentage-change values were accepted together.
+- Added three focused tests; all 21 project tests pass and the real example
+  prediction remains 10.4885.
+- Recorded before/after evidence in `docs/AI_DEBUG_REPORT.md` without changing
+  the trained model, dataset, protected test evidence, or reported metrics.
 
 - Selected the official field-based scenario `RET-01 — Product Demand
   Forecasting`.
