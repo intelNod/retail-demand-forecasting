@@ -6,8 +6,9 @@
   source for preparing the revised presentation.
 - `submission_details.docx` — repository link, Colab demo link, project summary,
   and verified final result for LMS submission.
-- `defense_presentation.pptx` — superseded first draft; do not use it as the
-  final defense deck until it is rebuilt from the full guide.
+- `defense_presentation_final.pptx` — reviewed 17-slide final defense deck.
+- `defense_presentation.pptx` — superseded first draft retained only for
+  project history; do not use it for the defense.
 - `DEFENSE_SCRIPT.md` — earlier compact speaking notes; the full guide now
   supersedes them for preparation.
 - `SUBMISSION_CHECKLIST.md` — final manual checks and the no-commit rule.

@@ -9,10 +9,9 @@ Complete this checklist before uploading to LMS.
 - [ ] Open the public GitHub repository while signed out.
 - [ ] Open `demo.ipynb` in Colab and run all cells.
 - [ ] Confirm the final model prediction is 10.4885 for the example input.
-- [ ] Confirm `python -m unittest discover -s tests -v` reports 18 passing tests.
+- [ ] Confirm `python -m unittest discover -s tests -v` reports 21 passing tests.
 - [ ] Study `FULL_PROJECT_GUIDE_RU.docx` and practice its 10-minute flow.
-- [ ] Rebuild and review the defense presentation from the full guide; the
-  existing PPTX is only a superseded first draft.
+- [ ] Open and review all 17 slides in `defense_presentation_final.pptx`.
 - [ ] Upload the required LMS file and verify the repository link after upload.
 - [ ] Save a screenshot or LMS confirmation of successful submission.
 - [ ] Do not commit or push anything after final LMS submission.

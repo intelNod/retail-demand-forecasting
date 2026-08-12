@@ -230,6 +230,7 @@ models/
 demo.ipynb           focused clean-runtime inference demo
 submission/
   submission_details.docx
+  defense_presentation_final.pptx
   defense_presentation.pptx
   DEFENSE_SCRIPT.md
   SUBMISSION_CHECKLIST.md
@@ -371,9 +372,10 @@ with its reviewed Markdown source in
 the complete workflow, exact results, live-demo steps, a timed 10-minute talk,
 likely questions, honest limitations, and the final LMS checklist.
 
-The earlier 10-slide deck remains an initial draft and is not the approved
-final presentation. It must be rebuilt from the comprehensive guide before the
-defense. A requirement-to-evidence map is available in
+The reviewed 17-slide final defense deck is available as
+[`submission/defense_presentation_final.pptx`](submission/defense_presentation_final.pptx).
+The earlier 10-slide deck remains only as project history and should not be
+used for the defense. A requirement-to-evidence map is available in
 [`RUBRIC_CHECKLIST.md`](RUBRIC_CHECKLIST.md).
 
 Meaningful development assistance is acknowledged in

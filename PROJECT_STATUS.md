@@ -6,8 +6,8 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C6 defense preparation and verified debugging: comprehensive guide complete;
-presentation review still required
+C6 finalization: comprehensive guide, reviewed 17-slide defense presentation,
+and verified debugging cycle complete
 
 ## Completed
 
@@ -18,6 +18,10 @@ presentation review still required
   prediction remains 10.4885.
 - Recorded before/after evidence in `docs/AI_DEBUG_REPORT.md` without changing
   the trained model, dataset, protected test evidence, or reported metrics.
+- Rebuilt and visually reviewed the final 17-slide defense presentation from
+  the comprehensive guide.
+- Updated the final deck to report the current 21-test suite while preserving
+  the historical 18-test clean-clone record in the reproducibility evidence.
 
 - Selected the official field-based scenario `RET-01 — Product Demand
   Forecasting`.
@@ -239,7 +243,8 @@ presentation review still required
 
 ## Current task
 
-Review and rebuild the defense presentation from the comprehensive guide.
+Perform the remaining manual LMS, public-link, Colab, and defense-practice
+checks in `submission/SUBMISSION_CHECKLIST.md`.
 
 ## Next planned task
 
