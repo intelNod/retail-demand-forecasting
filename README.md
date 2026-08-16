@@ -379,6 +379,22 @@ The current suite contains 26 passing tests. The earlier 18-test record in
 
 ## Submission and defense
 
+The EXTC4 evidence and defense package is available in:
+
+- [`docs/defense_pitch_outline.md`](docs/defense_pitch_outline.md) - the
+  five-minute pitch and live-demo route;
+- [`docs/capstone_evidence_matrix.md`](docs/capstone_evidence_matrix.md) - exact
+  evidence for all eight criteria, essential requirements, and locator tests;
+- [`docs/defense_question_bank.md`](docs/defense_question_bank.md) - likely
+  questions with short answers and exact evidence paths;
+- [`docs/final_action_plan.md`](docs/final_action_plan.md) - honest remaining
+  Yellow actions before submission and defense.
+
+The current evidence readiness is **YELLOW** because mentor approval, the exact
+extended LMS deadline, the timed student rehearsal, and final submission are
+real external/student actions that have not been confirmed. Technical evidence
+must not be described as final administrative approval.
+
 The comprehensive Russian project-and-defense guide is available as
 [`submission/FULL_PROJECT_GUIDE_RU.docx`](submission/FULL_PROJECT_GUIDE_RU.docx),
 with its reviewed Markdown source in

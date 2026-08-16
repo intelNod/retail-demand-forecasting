@@ -254,6 +254,36 @@ custom showcase, comprehensive guide, and verified debugging are ready
 
 ## Current task
 
+EXTC4 evidence audit and defense preparation are complete at the repository
+artifact level. The project now has a five-minute pitch, an eight-criterion
+Evidence Matrix, an evidence-linked question bank, and a final action plan.
+
+## EXTC4 - Evidence & Defense Readiness Gate
+
+- Readiness status: YELLOW
+- Pitch target: 5 minutes
+- Pitch actual duration: Pending student timed rehearsal
+- Live question answered: Pending student rehearsal
+- Highest-risk blocker: Mentor approval is still pending in `PROJECT_BRIEF.md`
+- Blocker result: Exact external action recorded in `docs/final_action_plan.md`
+- Evidence Matrix complete: Yes; all claims use current project evidence
+- Essential requirements checked: Yes; official score and attendance remain external
+- Solo Show-Me-Where challenge complete: No; three exact tests are prepared for the student
+- Defense question bank complete: Yes; 14 evidence-linked questions are prepared
+- Updated core evidence paths: `docs/defense_pitch_outline.md`,
+  `docs/capstone_evidence_matrix.md`, `docs/defense_question_bank.md`, and
+  `docs/final_action_plan.md`
+- Next deadline: Confirm the exact extended LMS date and time in LMS
+
+### Honest readiness note
+
+The trained model, unseen-data evaluation, error analysis, reproducible demo,
+documentation, English slides, and defense evidence paths are ready. The status
+remains YELLOW until the student obtains the real mentor decision, performs the
+timed pitch and locator checks, confirms the exact LMS deadline, and completes
+submission. No metric, rehearsal result, approval, or deadline has been
+invented.
+
 Run the student rehearsal using `rehearsal/README_RU.md`, then perform the
 remaining LMS, public-link, Colab, and defense-practice checks.
 
