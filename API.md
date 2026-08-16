@@ -1,7 +1,8 @@
 # Prediction API
 
-The Flask service exposes the final Random Forest through a local browser UI
-and two small REST endpoints. Run commands from the repository root.
+The Flask service exposes the final Random Forest through a local browser UI,
+a batch Excel rehearsal flow, and small REST endpoints. Run commands from the
+repository root.
 
 ## Prerequisites
 
@@ -19,6 +20,20 @@ The development server listens on `http://127.0.0.1:5000`.
 
 Open that address in a browser to use the prediction form. A machine-readable
 service description is available at `GET /api`.
+
+The custom project showcase is available at
+`http://127.0.0.1:5000/showcase`.
+
+## Excel batch prediction
+
+Use `rehearsal/demo_sales_features.xlsx` in the `Predict an Excel batch`
+section of the browser UI. The workbook must contain a `Demo Input` sheet and
+all 20 feature columns. Up to 5,000 rows and a 10 MB `.xlsx` file are accepted.
+
+Optional identifier columns are preserved in the result. If
+`actual_units_sold` is present, it is excluded from model inputs and used only
+after prediction to calculate `absolute_error` and MAE. The result can be
+downloaded as `prediction_results.xlsx`.
 
 ## Health check
 
@@ -63,6 +78,8 @@ and standalone final model. Small display rounding may be applied by clients.
 The API returns:
 
 - `400` for missing, unknown, inconsistent, or invalid feature values;
+- `400` for an unreadable Excel file, missing `Demo Input` sheet, missing
+  feature columns, invalid actual sales, or too many rows;
 - `415` when `Content-Type` is not `application/json`;
 - `503` when the final local model cannot be loaded or returns an invalid
   result.
@@ -75,3 +92,5 @@ is not intended as a public production deployment.
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
+
+The current verified suite contains 26 tests.

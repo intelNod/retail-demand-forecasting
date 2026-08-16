@@ -228,6 +228,12 @@ models/
   README.md
   final_model/       committed MLflow/skops inference artifact
 demo.ipynb           focused clean-runtime inference demo
+rehearsal/
+  demo_sales_features.xlsx
+  expected_prediction_results.xlsx
+  README_RU.md
+  start_rehearsal.ps1
+  showcase/index.html
 submission/
   submission_details.docx
   defense_presentation_final.pptx
@@ -354,14 +360,21 @@ production deployment.
 
 Opening `http://127.0.0.1:5000` in a browser shows the demonstration UI. It
 contains all 20 model inputs, final test metrics, live model status, validation
-messages, and the calculated weekly forecast. The layout also adapts to tablet
-and mobile widths.
+messages, and the calculated weekly forecast. It also accepts the committed
+240-row rehearsal workbook, runs batch prediction, calculates sample MAE only
+after prediction, previews actual-versus-predicted errors, and exports an Excel
+result. The custom project showcase is available at
+`http://127.0.0.1:5000/showcase`. The complete rehearsal order is documented in
+[`rehearsal/README_RU.md`](rehearsal/README_RU.md).
 
 Run all validation, inference, and API tests with:
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
+
+The current suite contains 26 passing tests. The earlier 18-test record in
+`REPRODUCIBILITY.md` remains the dated fresh-clone evidence from 01.08.2026.
 
 ## Submission and defense
 

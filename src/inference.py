@@ -5,14 +5,14 @@ from __future__ import annotations
 import os
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, Iterable, Mapping
 
 import mlflow
 import mlflow.sklearn
 import numpy as np
 import pandas as pd
 
-from src.validation import FEATURE_NAMES, validate_prediction_input
+from src.validation import FEATURE_NAMES, InputValidationError, validate_prediction_input
 
 
 def project_root() -> Path:
@@ -69,3 +69,31 @@ def predict_weekly_demand(
         raise RuntimeError("Model returned an invalid prediction.")
 
     return max(0.0, float(prediction[0]))
+
+
+def predict_weekly_demand_batch(
+    records: Iterable[Mapping[str, Any]], model: Any | None = None
+) -> np.ndarray:
+    """Validate multiple feature objects and return non-negative forecasts."""
+
+    validated_rows = []
+    for row_number, record in enumerate(records, start=2):
+        try:
+            validated_rows.append(validate_prediction_input(record))
+        except InputValidationError as error:
+            raise InputValidationError(f"Excel row {row_number}: {error}") from error
+
+    if not validated_rows:
+        raise InputValidationError("The uploaded workbook contains no data rows.")
+
+    input_frame = pd.DataFrame(
+        [[row[field] for field in FEATURE_NAMES] for row in validated_rows],
+        columns=FEATURE_NAMES,
+    ).astype("float32")
+    fitted_model = model if model is not None else load_final_model()
+    predictions = np.asarray(fitted_model.predict(input_frame), dtype="float64")
+
+    if predictions.shape != (len(input_frame),) or not np.isfinite(predictions).all():
+        raise RuntimeError("Model returned invalid batch predictions.")
+
+    return np.maximum(predictions, 0.0)

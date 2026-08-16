@@ -6,15 +6,15 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C6 finalization: comprehensive guide, reviewed 17-slide defense presentation,
-and verified debugging cycle complete
+C6 finalization and rehearsal preparation: Excel batch demo, custom showcase,
+comprehensive guide, presentation, and verified debugging complete
 
 ## Completed
 
 - Completed one controlled debugging cycle for the prediction input contract.
 - Reproduced and fixed a validation defect: contradictory current price,
   previous price, and percentage-change values were accepted together.
-- Added three focused tests; all 21 project tests pass and the real example
+- Added three focused debugging tests; the real example
   prediction remains 10.4885.
 - Recorded before/after evidence in `docs/AI_DEBUG_REPORT.md` without changing
   the trained model, dataset, protected test evidence, or reported metrics.
@@ -22,6 +22,15 @@ and verified debugging cycle complete
   the comprehensive guide.
 - Updated the final deck to report the current 21-test suite while preserving
   the historical 18-test clean-clone record in the reproducibility evidence.
+- Added a 240-row Excel rehearsal workbook sampled reproducibly across four
+  protected test weeks, ten stores, and three FOODS departments.
+- Added batch Excel prediction, row validation, sample MAE, actual-versus-
+  predicted preview, and downloadable Excel results to the Flask UI.
+- Verified the rehearsal workbook with the real final model: demo MAE 3.4419,
+  mean actual demand 6.7875, and mean prediction 6.4392. These sample metrics do
+  not replace the official 57,480-row test result.
+- Added a custom static showcase and a step-by-step Russian rehearsal guide.
+- Expanded the automated suite to 26 passing tests.
 
 - Selected the official field-based scenario `RET-01 — Product Demand
   Forecasting`.
@@ -243,8 +252,8 @@ and verified debugging cycle complete
 
 ## Current task
 
-Perform the remaining manual LMS, public-link, Colab, and defense-practice
-checks in `submission/SUBMISSION_CHECKLIST.md`.
+Run the student rehearsal using `rehearsal/README_RU.md`, then perform the
+remaining LMS, public-link, Colab, and defense-practice checks.
 
 ## Next planned task
 

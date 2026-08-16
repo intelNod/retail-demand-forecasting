@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Weekly FOODS demand forecast demonstration using the final Random Forest model.">
+    <link rel="icon" href="data:,">
     <title>Retail Demand Forecast</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
   </head>
@@ -48,6 +49,32 @@
             <strong>40 trees</strong>
             <small>controlled Random Forest</small>
           </article>
+        </div>
+      </section>
+
+      <section class="batch-card" id="excel-demo">
+        <div class="batch-copy">
+          <p class="step-label">Rehearsal mode</p>
+          <h2>Predict an Excel batch</h2>
+          <p>
+            Upload the prepared workbook. The model reads only the 20 feature
+            columns; actual sales are revealed afterward for MAE comparison.
+          </p>
+          <a class="text-link" href="/rehearsal/demo-sales-features.xlsx">Download demo workbook</a>
+        </div>
+        <form id="batch-form" class="batch-form">
+          <label class="file-drop" for="batch-file">
+            <span>Select .xlsx</span>
+            <strong id="file-name">No file selected</strong>
+            <input id="batch-file" name="file" type="file" accept=".xlsx" required>
+          </label>
+          <button class="primary-button" id="batch-submit" type="submit">Run batch prediction</button>
+          <div class="error-message" id="batch-error" role="alert" hidden></div>
+        </form>
+        <div class="batch-results" id="batch-results" hidden>
+          <div class="batch-metrics" id="batch-metrics"></div>
+          <div class="table-scroll"><table id="batch-table"></table></div>
+          <a class="download-button" id="batch-download" href="#">Download prediction results</a>
         </div>
       </section>
 

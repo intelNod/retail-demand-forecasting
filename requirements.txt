@@ -8,3 +8,4 @@ ipykernel>=6.29,<8
 scikit-learn>=1.5,<2
 mlflow>=2.16,<4
 flask>=3,<4
+openpyxl>=3.1,<4
