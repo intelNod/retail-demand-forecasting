@@ -237,6 +237,7 @@ rehearsal/
 submission/
   submission_details.docx
   defense_presentation_final.pptx
+  defense_presentation_final_en.pptx
   defense_presentation.pptx
   DEFENSE_SCRIPT.md
   SUBMISSION_CHECKLIST.md
@@ -385,8 +386,12 @@ with its reviewed Markdown source in
 the complete workflow, exact results, live-demo steps, a timed 10-minute talk,
 likely questions, honest limitations, and the final LMS checklist.
 
-The reviewed 17-slide final defense deck is available as
-[`submission/defense_presentation_final.pptx`](submission/defense_presentation_final.pptx).
+The reviewed 17-slide final defense decks are available in Russian as
+[`submission/defense_presentation_final.pptx`](submission/defense_presentation_final.pptx)
+and in English as
+[`submission/defense_presentation_final_en.pptx`](submission/defense_presentation_final_en.pptx).
+The English deck preserves the same evidence flow and visual structure, adds
+English speaker notes, and reports the current 26-test suite.
 The earlier 10-slide deck remains only as project history and should not be
 used for the defense. A requirement-to-evidence map is available in
 [`RUBRIC_CHECKLIST.md`](RUBRIC_CHECKLIST.md).

@@ -6,8 +6,8 @@ Retail Demand Forecasting (`RET-01`)
 
 ## Current stage
 
-C6 finalization and rehearsal preparation: Excel batch demo, custom showcase,
-comprehensive guide, presentation, and verified debugging complete
+C6 finalization complete: English/Russian defense decks, Excel batch demo,
+custom showcase, comprehensive guide, and verified debugging are ready
 
 ## Completed
 
@@ -20,8 +20,10 @@ comprehensive guide, presentation, and verified debugging complete
   the trained model, dataset, protected test evidence, or reported metrics.
 - Rebuilt and visually reviewed the final 17-slide defense presentation from
   the comprehensive guide.
-- Updated the final deck to report the current 21-test suite while preserving
-  the historical 18-test clean-clone record in the reproducibility evidence.
+- Created and visually reviewed a one-to-one 17-slide English defense deck with
+  English speaker notes and the current 26-test suite.
+- Preserved the historical 18-test clean-clone record as dated evidence while
+  clearly separating it from the current 26-test suite.
 - Added a 240-row Excel rehearsal workbook sampled reproducibly across four
   protected test weeks, ten stores, and three FOODS departments.
 - Added batch Excel prediction, row validation, sample MAE, actual-versus-
@@ -257,8 +259,9 @@ remaining LMS, public-link, Colab, and defense-practice checks.
 
 ## Next planned task
 
-Student studies the guide, reviews the revised presentation, confirms
-mentor/deadline details, submits through LMS, and makes no commits afterward.
+Student rehearses the English presentation and Excel/Flask demonstration,
+confirms mentor and extended-deadline details, submits through LMS, and makes no
+commits afterward.
 
 ## Planned course route
 
@@ -279,8 +282,8 @@ mentor/deadline details, submits through LMS, and makes no commits afterward.
 - High sales and prices are review candidates, not automatic errors.
 - Optional event fields and zero sales are valid data characteristics and must
   not be filled or removed without a clear rule.
-- The instructor message says 04.08.2026 at 23:59, while the student's safer
-  personal deadline is 03.08.2026; the exact LMS deadline must be confirmed.
+- The deadline was extended, but its exact date and time are not stored in the
+  repository; the current LMS timestamp must be confirmed before submission.
 - No commits or pushes are allowed after final LMS submission.
 
 ## Git state

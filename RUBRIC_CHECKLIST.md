@@ -20,8 +20,8 @@ This map helps the reviewer find the project evidence quickly.
 | Assistance acknowledgement | `ASSISTANCE.md` | Complete |
 | Full project/defense explanation | `submission/FULL_PROJECT_GUIDE_RU.docx` | Complete |
 | LMS details | `submission/submission_details.docx` | Complete; use official LMS template if mandatory |
-| Final defense presentation | `submission/defense_presentation.pptx` | Revision required; current file is a superseded draft |
+| Final defense presentation | `submission/defense_presentation_final.pptx`, `submission/defense_presentation_final_en.pptx` | Complete; reviewed 17-slide Russian and English decks |
 | Mentor approval | `PROJECT_BRIEF.md` | Pending actual mentor confirmation |
 
-Administrative items still require the student: confirm the exact LMS deadline,
+Administrative items still require the student: confirm the exact extended LMS deadline,
 upload through LMS, verify the submitted link, and stop all commits afterward.
